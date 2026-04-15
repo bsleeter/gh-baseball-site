@@ -47,7 +47,7 @@ export default function DonatePage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Main content */}
           <div className="lg:col-span-3 space-y-10">
-            {/* About the project */}
+            {/* Why it matters */}
             <section>
               <h2 className="font-display text-2xl tracking-wide text-navy mb-4">
                 WHY THIS MATTERS
@@ -56,22 +56,68 @@ export default function DonatePage() {
                 {renovationDetails.description}
               </p>
               <div className="space-y-3">
-                {renovationDetails.improvements.map((item, i) => (
+                {renovationDetails.whyItMatters.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="shrink-0 w-6 h-6 rounded-full bg-carolina/15 flex items-center justify-center mt-0.5">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path
-                          d="M2 6L5 9L10 3"
-                          stroke="#4B9CD3"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
+                        <path d="M2 6L5 9L10 3" stroke="#4B9CD3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <span className="font-heading text-navy/80">{item}</span>
+                    <span className="font-heading text-navy/80 text-sm">{item}</span>
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* Phased Plan */}
+            <section>
+              <h2 className="font-display text-2xl tracking-wide text-navy mb-5">
+                THE PLAN
+              </h2>
+              <div className="space-y-4">
+                {renovationDetails.phases.map((phase, i) => (
+                  <div key={i} className="bg-white rounded-lg border border-navy/8 overflow-hidden">
+                    <div className="flex items-center justify-between px-5 py-3 bg-navy/5 border-b border-navy/8">
+                      <h3 className="font-heading font-bold text-sm text-navy uppercase tracking-wider">
+                        {phase.name}
+                      </h3>
+                      <span className="font-heading text-xs text-carolina-dark font-semibold uppercase tracking-wider">
+                        {phase.cost}
+                      </span>
+                    </div>
+                    <div className="p-5">
+                      <span className="inline-block px-2 py-0.5 rounded text-[10px] font-heading font-bold uppercase tracking-wider bg-carolina/10 text-carolina-dark mb-3">
+                        {phase.priority}
+                      </span>
+                      <ul className="space-y-2">
+                        {phase.items.map((item, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm font-heading text-navy/70">
+                            <span className="shrink-0 text-carolina mt-0.5">&#9679;</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Cost summary */}
+              <div className="mt-4 bg-navy rounded-lg p-5 text-white">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <span className="score-display text-xl">{renovationDetails.totalCost}</span>
+                    <span className="block text-[10px] font-heading uppercase tracking-wider text-white/50 mt-1">Total Project</span>
+                  </div>
+                  <div>
+                    <span className="score-display text-xl text-carolina-light">{renovationDetails.boosterFunds}</span>
+                    <span className="block text-[10px] font-heading uppercase tracking-wider text-white/50 mt-1">Booster Committed</span>
+                  </div>
+                  <div>
+                    <span className="score-display text-xl">{renovationDetails.fundingNeeded}</span>
+                    <span className="block text-[10px] font-heading uppercase tracking-wider text-white/50 mt-1">Still Needed</span>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -138,7 +184,7 @@ export default function DonatePage() {
                   : "Select an Amount"}
               </button>
               <p className="text-xs text-navy/40 font-heading mt-2 text-center">
-                Stripe integration coming soon. Contact the Booster Club to donate now.
+                Contact the Booster Club to donate: <a href="mailto:cpayne_9@me.com" className="text-carolina-dark hover:text-carolina">cpayne_9@me.com</a>
               </p>
             </section>
           </div>
@@ -168,9 +214,11 @@ export default function DonatePage() {
                     className="h-full bg-gradient-to-r from-carolina to-carolina-light rounded-full animate-fill relative"
                     style={{ width: `${pct}%` }}
                   >
-                    <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-heading font-bold text-white">
-                      {pct}%
-                    </span>
+                    {pct > 10 && (
+                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-heading font-bold text-white">
+                        {pct}%
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -179,6 +227,21 @@ export default function DonatePage() {
                   <span>${(fundraisingGoal / 2).toLocaleString()}</span>
                   <span>${fundraisingGoal.toLocaleString()}</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Current situation */}
+            <div className="bg-white rounded-lg border border-navy/8 p-5">
+              <h3 className="font-display text-lg tracking-wide text-navy mb-3">THE PROBLEM</h3>
+              <div className="space-y-2 text-sm font-heading text-navy/70">
+                <p>Our players deserve to play at home. Currently, the GHHS baseball field cannot host games due to:</p>
+                <ul className="space-y-1.5 mt-2">
+                  <li className="flex items-start gap-2"><span className="text-red-400 shrink-0">&#9679;</span> Standing water with no drainage</li>
+                  <li className="flex items-start gap-2"><span className="text-red-400 shrink-0">&#9679;</span> Dangerous rock warning track</li>
+                  <li className="flex items-start gap-2"><span className="text-red-400 shrink-0">&#9679;</span> Deteriorated fencing with gaps</li>
+                  <li className="flex items-start gap-2"><span className="text-red-400 shrink-0">&#9679;</span> No proper infield mix</li>
+                  <li className="flex items-start gap-2"><span className="text-red-400 shrink-0">&#9679;</span> Unusable bullpens</li>
+                </ul>
               </div>
             </div>
 
@@ -206,6 +269,19 @@ export default function DonatePage() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Contact */}
+            <div className="bg-white rounded-lg border border-navy/8 p-5">
+              <h3 className="font-display text-lg tracking-wide text-navy mb-2">GET INVOLVED</h3>
+              <p className="text-sm font-heading text-navy/70 leading-relaxed">
+                Interested in sponsorship, volunteering, or making a donation? Contact the Booster Club:
+              </p>
+              <p className="mt-2">
+                <a href="mailto:cpayne_9@me.com" className="text-sm font-heading font-semibold text-carolina-dark hover:text-carolina transition-colors">
+                  cpayne_9@me.com
+                </a>
+              </p>
             </div>
           </div>
         </div>
