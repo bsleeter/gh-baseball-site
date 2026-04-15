@@ -602,6 +602,9 @@ export default function CalendarPage() {
           editable={isAdmin}
           droppable={isAdmin}
           eventStartEditable={isAdmin}
+          longPressDelay={500}
+          eventLongPressDelay={500}
+          selectLongPressDelay={500}
           dateClick={isAdmin ? handleDateClick : undefined}
           eventClick={handleEventClick}
           eventDrop={handleEventDrop}
