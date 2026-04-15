@@ -126,7 +126,7 @@ function PlayerEditModal({
               ))}
             </div></div>
             <div><label className={labelClass}>Throws</label><div className="flex gap-1">
-              {(["R", "L"] as BatsThrows[]).map((v) => (
+              {(["R", "L"] as const).map((v) => (
                 <button key={v} type="button" onClick={() => setField("throws", v)}
                   className={`flex-1 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider border transition-all ${form.throws === v ? "bg-navy text-white border-navy" : "bg-white text-navy/40 border-navy/10 hover:border-navy/30"}`}>
                   {v === "R" ? "Right" : "Left"}
