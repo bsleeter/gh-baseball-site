@@ -438,6 +438,7 @@ export default function CalendarPage() {
   const [teamFilter, setTeamFilter] = useState<TeamFilter>("all");
   const [typeFilter, setTypeFilter] = useState<TypeFilter>("all");
   const [editing, setEditing] = useState<EditingEvent | null>(null);
+  const [viewing, setViewing] = useState<EditingEvent | null>(null);
   const [newEventDate, setNewEventDate] = useState<string | null>(null);
 
   const { isAdmin } = useAuth();
@@ -485,14 +486,20 @@ export default function CalendarPage() {
   }
 
   function handleEventClick(info: { event: { extendedProps: Record<string, string> } }) {
-    if (!isAdmin) return;
     const props = info.event.extendedProps;
+    let event: EditingEvent | null = null;
     if (props.source === "game") {
       const game = (games ?? []).find((g) => g.id === props.gameId);
-      if (game) setEditing({ source: "game", game });
+      if (game) event = { source: "game", game };
     } else {
       const calEvent = (calEvents ?? []).find((ce) => ce.id === props.calEventId);
-      if (calEvent) setEditing({ source: "calendar_event", calEvent });
+      if (calEvent) event = { source: "calendar_event", calEvent };
+    }
+    if (!event) return;
+    if (isAdmin) {
+      setEditing(event);
+    } else {
+      setViewing(event);
     }
   }
 
@@ -628,6 +635,93 @@ export default function CalendarPage() {
       {newEventDate && (
         <NewEventModal initialDate={newEventDate} onSave={handleNewEventSave} onClose={() => setNewEventDate(null)} />
       )}
+
+      {/* Read-only detail popup for public users */}
+      {viewing && (
+        <EventDetailPopup event={viewing} onClose={() => setViewing(null)} />
+      )}
+    </div>
+  );
+}
+
+// ─── Read-Only Event Detail Popup ────────────────────────────
+function EventDetailPopup({ event, onClose }: { event: EditingEvent; onClose: () => void }) {
+  const isGame = event.source === "game";
+  const g = event.game;
+  const ce = event.calEvent;
+
+  const teamLabel = isGame
+    ? { varsity: "Varsity", jv: "JV", cteam: "C Team" }[g!.team]
+    : { varsity: "Varsity", jv: "JV", cteam: "C Team", all: "All Teams" }[ce!.team];
+
+  let dateStr = "";
+  let timeStr = "";
+  let locationStr = "";
+  let title = "";
+
+  if (isGame && g) {
+    const d = new Date(g.date + "T12:00:00");
+    dateStr = d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+    timeStr = g.time;
+    locationStr = g.venue;
+    title = `${g.location === "home" ? "vs" : "@"} ${g.opponent}`;
+  } else if (ce) {
+    const d = new Date(ce.start_time);
+    dateStr = d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+    timeStr = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    if (ce.end_time) {
+      const end = new Date(ce.end_time);
+      timeStr += ` – ${end.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}`;
+    }
+    locationStr = ce.location ?? "";
+    title = ce.title;
+  }
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-navy/40 backdrop-blur-sm" />
+      <div className="relative bg-cream rounded-xl shadow-2xl border border-navy/10 w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+        <div className="bg-navy px-6 py-4 rounded-t-xl flex items-center justify-between">
+          <div>
+            <h3 className="font-display text-lg text-white tracking-wide">{title}</h3>
+            <p className="text-xs font-heading text-white/50 uppercase tracking-wider">{teamLabel}</p>
+          </div>
+          <button onClick={onClose} className="text-white/50 hover:text-white text-2xl leading-none">&times;</button>
+        </div>
+        <div className="p-5 space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="text-lg">📅</span>
+            <span className="font-heading text-sm text-navy">{dateStr}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-lg">🕐</span>
+            <span className="font-heading text-sm text-navy">{timeStr}</span>
+          </div>
+          {locationStr && (
+            <div className="flex items-center gap-3">
+              <span className="text-lg">📍</span>
+              <span className="font-heading text-sm text-navy">{locationStr}</span>
+            </div>
+          )}
+          {isGame && g && g.result && (
+            <div className="flex items-center gap-3 pt-1">
+              <span className={`font-display text-sm px-2 py-0.5 rounded ${g.result === "W" ? "bg-green-100 text-win" : "bg-red-50 text-loss"}`}>
+                {g.result}
+              </span>
+              <span className="score-display text-xl text-navy">{g.score_us}–{g.score_them}</span>
+            </div>
+          )}
+          {isGame && g && g.highlights && (
+            <p className="text-xs text-navy/60 italic leading-relaxed pt-1">{g.highlights}</p>
+          )}
+          {!isGame && ce && ce.notes && (
+            <p className="text-xs text-navy/60 italic leading-relaxed pt-1">{ce.notes}</p>
+          )}
+          <button onClick={onClose} className="w-full mt-2 py-2 rounded-lg border border-navy/10 text-xs font-heading font-bold uppercase tracking-wider text-navy/50 hover:text-navy transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
