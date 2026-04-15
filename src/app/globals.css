@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #1B2A4A;
+  --color-navy-light: #243558;
+  --color-navy-dark: #111C33;
+  --color-carolina: #4B9CD3;
+  --color-carolina-light: #6BB3E0;
+  --color-carolina-dark: #3A87BF;
+  --color-cream: #FAF9F6;
+  --color-sand: #F0EDE7;
+  --color-home: #D4EDDA;
+  --color-home-text: #1B5E20;
+  --color-away: #D6EAF8;
+  --color-away-text: #1565C0;
+  --color-event: #FFF3E0;
+  --color-event-text: #E65100;
+  --color-win: #2E7D32;
+  --color-loss: #C62828;
+  --color-urgent: #DC2626;
+  --color-warning: #F59E0B;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-navy);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.stitch-line {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    var(--color-carolina) 8px,
+    var(--color-carolina) 10px
+  );
+  height: 3px;
+  opacity: 0.4;
+}
+
+@keyframes fill-bar {
+  from { width: 0%; }
+}
+
+.animate-fill {
+  animation: fill-bar 1.5s ease-out forwards;
+}
+
+.score-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(27, 42, 74, 0.12);
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out;
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* FullCalendar overrides */
+.calendar-wrapper .fc {
+  font-family: var(--font-heading);
+}
+.calendar-wrapper .fc .fc-toolbar-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+}
+.calendar-wrapper .fc .fc-button {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+.calendar-wrapper .fc .fc-button:hover {
+  background: var(--color-navy-light);
+  border-color: var(--color-navy-light);
+}
+.calendar-wrapper .fc .fc-button-active {
+  background: var(--color-carolina) !important;
+  border-color: var(--color-carolina) !important;
+}
+.calendar-wrapper .fc .fc-day-today {
+  background: rgba(75, 156, 211, 0.08) !important;
+}
+.calendar-wrapper .fc .fc-event {
+  font-size: 0.7rem;
+  border-radius: 3px;
+  padding: 1px 3px;
+  cursor: pointer;
+}
+.calendar-wrapper .fc .fc-event.event-game {
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-weight: 700;
+  border-width: 0;
+  display: block;
+}
+.calendar-wrapper .fc .fc-col-header-cell-cushion {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+}
+.calendar-wrapper .fc .fc-daygrid-day-number {
+  font-size: 0.8rem;
+  color: var(--color-navy);
+}
