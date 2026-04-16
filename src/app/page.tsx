@@ -69,7 +69,7 @@ export default function HomePage() {
               <span className="text-carolina-light">TIDES BASEBALL</span>
             </h1>
             <p className="mt-5 text-white/60 text-lg font-heading max-w-md">
-              Class 3A &middot; South Puget Sound League &middot; Gig Harbor, WA
+              <a href="https://www.pugetsoundleague.org/sport/?sportid=6" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Puget Sound League</a> &middot; Narrows Division &middot; Gig Harbor, WA
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
