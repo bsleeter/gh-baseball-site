@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
-import { useGames, useFundraising } from "@/lib/hooks";
+import { useGames, useAllGames, useFundraising } from "@/lib/hooks";
 import type { DbGame } from "@/lib/database";
 
 function formatDate(dateStr: string) {
@@ -24,10 +24,13 @@ function getRecord(games: DbGame[]) {
 
 export default function HomePage() {
   const { data: varsityGames } = useGames("varsity");
+  const { grouped } = useAllGames();
   const { data: fundraising } = useFundraising();
 
   const games = varsityGames ?? [];
   const record = getRecord(games);
+  const jvRecord = getRecord(grouped?.jv ?? []);
+  const cRecord = getRecord(grouped?.cteam ?? []);
   const today = new Date().toISOString().split("T")[0];
   const upcoming = games.filter((g) => g.date >= today && !g.result).slice(0, 3);
   const recent = games.filter((g) => g.result).slice(-5).reverse();
@@ -69,20 +72,19 @@ export default function HomePage() {
               Class 3A &middot; South Puget Sound League &middot; Gig Harbor, WA
             </p>
 
-            <div className="mt-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg px-5 py-3 border border-white/10">
-              <div className="text-center">
-                <span className="score-display text-3xl text-white">{record.wins}</span>
-                <span className="block text-[10px] font-heading uppercase tracking-wider text-white/50">Wins</span>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10">
+                <span className="font-heading font-bold text-carolina-light text-xs uppercase tracking-wider">Varsity</span>
+                <span className="score-display text-2xl text-white">{record.wins}-{record.losses}</span>
               </div>
-              <div className="w-px h-8 bg-white/20" />
-              <div className="text-center">
-                <span className="score-display text-3xl text-white/60">{record.losses}</span>
-                <span className="block text-[10px] font-heading uppercase tracking-wider text-white/50">Losses</span>
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10">
+                <span className="font-heading font-bold text-carolina-light text-xs uppercase tracking-wider">JV</span>
+                <span className="score-display text-2xl text-white">{jvRecord.wins}-{jvRecord.losses}</span>
               </div>
-              <div className="w-px h-8 bg-white/20" />
-              <span className="font-heading font-bold text-carolina-light text-sm uppercase tracking-wider">
-                Varsity
-              </span>
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 border border-white/10">
+                <span className="font-heading font-bold text-carolina-light text-xs uppercase tracking-wider">C Team</span>
+                <span className="score-display text-2xl text-white">{cRecord.wins}-{cRecord.losses}</span>
+              </div>
             </div>
           </div>
         </div>
