@@ -40,14 +40,14 @@ export default function Footer() {
               Booster Club
             </h4>
             <p className="text-sm leading-relaxed">
-              Contact: Carolyn Payne
+              Contact: Scott Harthorn
             </p>
             <p className="text-sm mt-1">
               <a
-                href="mailto:cpayne_9@me.com"
+                href="mailto:scottharthornjr@gmail.com"
                 className="text-carolina-light hover:text-carolina transition-colors"
               >
-                cpayne_9@me.com
+                scottharthornjr@gmail.com
               </a>
             </p>
             <p className="text-sm mt-3 leading-relaxed">

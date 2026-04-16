@@ -77,8 +77,8 @@ export default function DonatePage() {
           </p>
           <p className="mt-6 text-sm font-heading text-navy/50">
             Questions? Contact the Booster Club:<br />
-            <a href="mailto:cpayne_9@me.com" className="text-carolina-dark hover:text-carolina font-semibold transition-colors">
-              cpayne_9@me.com
+            <a href="mailto:scottharthornjr@gmail.com" className="text-carolina-dark hover:text-carolina font-semibold transition-colors">
+              scottharthornjr@gmail.com
             </a>
           </p>
         </section>
