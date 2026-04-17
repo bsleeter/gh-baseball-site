@@ -216,6 +216,23 @@ export default function HomePage() {
           </div>
 
           <div className="bg-white rounded-lg border border-navy/8 p-5">
+            <h3 className="font-display text-lg tracking-wide text-navy mb-3">FOLLOW ON GAMECHANGER</h3>
+            <div className="space-y-2">
+              {[
+                { href: "https://web.gc.com/teams/eCZfKaQ4qp3L/2026-spring-gig-harbor-varsity-tides", label: "Varsity" },
+                { href: "https://web.gc.com/teams/X8NSG05ak15L/2026-spring-gig-harbor-junior-varsity-tides", label: "JV" },
+                { href: "https://web.gc.com/teams/Dkd6STNn3sBy/2026-spring-gig-harbor-c-team-tides", label: "C Team" },
+              ].map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-navy/5 transition-colors group">
+                  <span className="text-lg">⚾</span>
+                  <span className="font-heading font-semibold text-sm text-navy group-hover:text-carolina-dark transition-colors">{link.label}</span>
+                  <span className="ml-auto text-navy/30 group-hover:text-carolina transition-colors text-xs font-heading">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg border border-navy/8 p-5">
             <h3 className="font-display text-lg tracking-wide text-navy mb-2">HOME FIELD</h3>
             <p className="text-sm font-heading text-navy/70 leading-relaxed">Sehmel Homestead Park<br />Gig Harbor, WA 98335</p>
             <p className="text-sm font-heading text-navy/70 mt-2 leading-relaxed">Gig Harbor High School<br />5101 Rosedale St NW</p>
