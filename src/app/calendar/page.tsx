@@ -593,6 +593,9 @@ export default function CalendarPage() {
         <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#FFF3E0" }} /> C Practice</span>
       </div>
 
+      {/* Subscribe */}
+      <CalendarSubscribe />
+
       {/* Calendar */}
       <div className="bg-white rounded-lg border border-navy/8 p-4 sm:p-6 calendar-wrapper">
         <FullCalendar
@@ -722,6 +725,83 @@ function EventDetailPopup({ event, onClose }: { event: EditingEvent; onClose: ()
           </button>
         </div>
       </div>
+    </div>
+  );
+}
+
+// ─── Calendar Subscribe Component ────────────────────────────
+function CalendarSubscribe() {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const feeds = [
+    { key: "all", label: "All Teams" },
+    { key: "varsity", label: "Varsity" },
+    { key: "jv", label: "JV" },
+    { key: "cteam", label: "C Team" },
+  ];
+
+  function getUrl(team: string) {
+    if (typeof window === "undefined") return "";
+    return `${window.location.origin}/api/calendar/${team}`;
+  }
+
+  function getWebcalUrl(team: string) {
+    return getUrl(team).replace(/^https?:/, "webcal:");
+  }
+
+  function handleCopy(team: string) {
+    navigator.clipboard.writeText(getUrl(team));
+    setCopied(team);
+    setTimeout(() => setCopied(null), 2000);
+  }
+
+  if (!open) {
+    return (
+      <div className="mb-6">
+        <button
+          onClick={() => setOpen(true)}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-navy/10 bg-white text-xs font-heading font-bold uppercase tracking-wider text-navy/60 hover:text-navy hover:border-navy/30 transition-colors"
+        >
+          <span>📲</span> Subscribe to Calendar
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mb-6 bg-white rounded-lg border border-navy/8 p-5">
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="font-heading font-bold text-sm text-navy uppercase tracking-wider">
+          Subscribe to Calendar
+        </h3>
+        <button onClick={() => setOpen(false)} className="text-navy/30 hover:text-navy text-lg leading-none">&times;</button>
+      </div>
+      <p className="text-xs font-heading text-navy/50 mb-4">
+        Add games and practices to your phone or computer calendar. Choose a team below.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {feeds.map((f) => (
+          <div key={f.key} className="flex items-center gap-2 p-3 rounded-lg border border-navy/8 bg-navy/[0.02]">
+            <span className="font-heading font-bold text-sm text-navy flex-1">{f.label}</span>
+            <a
+              href={getWebcalUrl(f.key)}
+              className="px-2.5 py-1 rounded text-[10px] font-heading font-bold uppercase tracking-wider bg-navy text-white hover:bg-navy-light transition-colors"
+            >
+              Subscribe
+            </a>
+            <button
+              onClick={() => handleCopy(f.key)}
+              className="px-2.5 py-1 rounded text-[10px] font-heading font-bold uppercase tracking-wider border border-navy/10 text-navy/50 hover:text-navy hover:border-navy/30 transition-colors"
+            >
+              {copied === f.key ? "Copied!" : "Copy URL"}
+            </button>
+          </div>
+        ))}
+      </div>
+      <p className="text-[10px] font-heading text-navy/30 mt-3">
+        &ldquo;Subscribe&rdquo; opens your calendar app directly. &ldquo;Copy URL&rdquo; lets you paste into Google Calendar (Other calendars &rarr; From URL).
+      </p>
     </div>
   );
 }
