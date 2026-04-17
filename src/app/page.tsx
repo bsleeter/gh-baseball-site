@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
-import { useGames, useAllGames, useFundraising } from "@/lib/hooks";
+import { useGames, useAllGames } from "@/lib/hooks";
 import type { DbGame } from "@/lib/database";
 
 function formatDate(dateStr: string) {
@@ -25,7 +25,6 @@ function getRecord(games: DbGame[]) {
 export default function HomePage() {
   const { data: varsityGames } = useGames("varsity");
   const { grouped } = useAllGames();
-  const { data: fundraising } = useFundraising();
 
   const games = varsityGames ?? [];
   const record = getRecord(games);
@@ -34,10 +33,6 @@ export default function HomePage() {
   const today = new Date().toISOString().split("T")[0];
   const upcoming = games.filter((g) => g.date >= today && !g.result).slice(0, 3);
   const recent = games.filter((g) => g.result).slice(-5).reverse();
-
-  const goal = fundraising?.goal ?? 50000;
-  const raised = fundraising?.raised ?? 0;
-  const pct = Math.round((raised / goal) * 100);
 
   return (
     <>
@@ -191,19 +186,14 @@ export default function HomePage() {
           <div className="bg-white rounded-lg border border-navy/8 overflow-hidden">
             <div className="bg-navy px-5 py-4">
               <h3 className="font-display text-xl text-white tracking-wide">SUPPORT OUR FIELD</h3>
-              <p className="text-xs font-heading text-white/50 mt-1 uppercase tracking-wider">Field Renovation Fund</p>
+              <p className="text-xs font-heading text-white/50 mt-1 uppercase tracking-wider">Field Renovation</p>
             </div>
             <div className="p-5">
-              <div className="flex justify-between items-end mb-2">
-                <span className="score-display text-2xl text-navy">${raised.toLocaleString()}</span>
-                <span className="text-xs font-heading text-navy/50 uppercase tracking-wider">of ${goal.toLocaleString()}</span>
-              </div>
-              <div className="h-3 bg-navy/10 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-carolina to-carolina-light rounded-full animate-fill" style={{ width: `${pct}%` }} />
-              </div>
-              <p className="text-xs text-navy/40 mt-2 font-heading">{pct}% of goal reached</p>
+              <p className="text-sm font-heading text-navy/70 leading-relaxed">
+                We&rsquo;re working to renovate the GHHS baseball field so our players can finally play at home.
+              </p>
               <Link href="/donate" className="mt-4 block text-center bg-carolina hover:bg-carolina-dark text-white font-heading font-bold uppercase tracking-wider text-sm py-3 rounded-lg transition-colors">
-                Make a Donation
+                Learn More
               </Link>
             </div>
           </div>
@@ -214,7 +204,7 @@ export default function HomePage() {
               {[
                 { href: "/schedule", label: "Full Schedule", icon: "📅" },
                 { href: "/roster", label: "Team Rosters", icon: "👥" },
-                { href: "/donate", label: "Donate Now", icon: "💙" },
+                { href: "/donate", label: "Field Renovation", icon: "💙" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-navy/5 transition-colors group">
                   <span className="text-lg">{link.icon}</span>
