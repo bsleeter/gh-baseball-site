@@ -7,12 +7,14 @@ import {
   getAnnouncements,
   getFundraising,
   getCalendarEvents,
+  getPhotos,
   getSession,
   type DbGame,
   type DbPlayer,
   type DbAnnouncement,
   type DbFundraising,
   type DbCalendarEvent,
+  type DbPhoto,
 } from "./database";
 import { supabase } from "./supabase";
 
@@ -84,6 +86,10 @@ export function useAllPlayersGrouped() {
 
 export function useCalendarEvents() {
   return useQuery(() => getCalendarEvents(), []);
+}
+
+export function usePhotos(category?: string) {
+  return useQuery(() => getPhotos(category), [category]);
 }
 
 export function useAuth() {

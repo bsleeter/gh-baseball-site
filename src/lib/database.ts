@@ -211,6 +211,63 @@ export async function updateGameDetails(
   if (error) throw error;
 }
 
+// ─── Photos ─────────────────────────────────────────────────
+
+export interface DbPhoto {
+  id: string;
+  filename: string;
+  caption: string | null;
+  category: "game" | "practice" | "team" | "dinner" | "other";
+  team: "varsity" | "jv" | "cteam" | "all" | null;
+  date: string | null;
+  storage_path: string;
+  created_at: string;
+}
+
+export async function getPhotos(category?: string) {
+  let query = supabase.from("photos").select("*").order("created_at", { ascending: false });
+  if (category && category !== "all") query = query.eq("category", category);
+  const { data, error } = await query;
+  if (error) throw error;
+  return data as DbPhoto[];
+}
+
+export function getPhotoUrl(storagePath: string): string {
+  const { data } = supabase.storage.from("photos").getPublicUrl(storagePath);
+  return data.publicUrl;
+}
+
+export async function uploadPhoto(file: File, metadata: {
+  caption?: string;
+  category: DbPhoto["category"];
+  team?: DbPhoto["team"];
+  date?: string;
+}) {
+  const ext = file.name.split(".").pop();
+  const path = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("photos")
+    .upload(path, file, { cacheControl: "3600", upsert: false });
+  if (uploadError) throw uploadError;
+
+  const { error: dbError } = await supabase.from("photos").insert({
+    filename: file.name,
+    caption: metadata.caption || null,
+    category: metadata.category,
+    team: metadata.team || null,
+    date: metadata.date || null,
+    storage_path: path,
+  });
+  if (dbError) throw dbError;
+}
+
+export async function deletePhoto(id: string, storagePath: string) {
+  await supabase.storage.from("photos").remove([storagePath]);
+  const { error } = await supabase.from("photos").delete().eq("id", id);
+  if (error) throw error;
+}
+
 // ─── Auth ────────────────────────────────────────────────────
 
 export async function signIn(email: string, password: string) {
