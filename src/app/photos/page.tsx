@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { usePhotos, useAuth } from "@/lib/hooks";
 import { getPhotoUrl, uploadPhoto, deletePhoto, type DbPhoto } from "@/lib/database";
+import PageHeader from "@/components/PageHeader";
+import { EditorialDivider } from "@/components/SectionHeader";
 
 const categories = [
   { key: "all", label: "All" },
@@ -64,21 +66,28 @@ export default function PhotosPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="font-display text-4xl tracking-wide text-navy">PHOTOS</h1>
-          <div className="stitch-line mt-2 max-w-[200px]" />
-        </div>
+    <>
+      <PageHeader
+        kicker="Tides Baseball · Gallery"
+        title={
+          <>
+            TIDES <span className="text-carolina-light">PHOTOS</span>
+          </>
+        }
+        subtitle="Moments from the field — games, practice, team dinners, and everything in between."
+      />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-16">
+        <EditorialDivider label="Gallery" />
         {isAdmin && (
-          <button
-            onClick={() => setShowUpload(!showUpload)}
-            className="px-4 py-2 rounded-lg bg-carolina hover:bg-carolina-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors"
-          >
-            {showUpload ? "Close" : "Upload Photos"}
-          </button>
+          <div className="flex justify-end mb-6">
+            <button
+              onClick={() => setShowUpload(!showUpload)}
+              className="px-4 py-2 rounded-lg bg-carolina hover:bg-carolina-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors"
+            >
+              {showUpload ? "Close" : "Upload Photos"}
+            </button>
+          </div>
         )}
-      </div>
 
       {/* Upload form (admin only) */}
       {isAdmin && showUpload && (
@@ -256,6 +265,7 @@ export default function PhotosPage() {
           </div>
         </div>
       )}
-    </div>
+      </main>
+    </>
   );
 }

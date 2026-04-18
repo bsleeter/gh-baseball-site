@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/schedule", label: "Schedule" },
   { href: "/calendar", label: "Calendar" },
   { href: "/roster", label: "Roster" },
+  { href: "/records", label: "Records" },
   { href: "/photos", label: "Photos" },
   { href: "/donate", label: "Support the Field" },
 ];

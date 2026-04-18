@@ -7,6 +7,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useAllGames, useCalendarEvents, useAuth } from "@/lib/hooks";
+import PageHeader from "@/components/PageHeader";
+import { EditorialDivider } from "@/components/SectionHeader";
 import {
   updateCalendarEvent,
   updateGameDetails,
@@ -544,18 +546,25 @@ export default function CalendarPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="font-display text-4xl tracking-wide text-navy">MASTER CALENDAR</h1>
-          <div className="stitch-line mt-2 max-w-[200px]" />
-        </div>
+    <>
+      <PageHeader
+        kicker="Tides Baseball · 2026"
+        title={
+          <>
+            MASTER <span className="text-carolina-light">CALENDAR</span>
+          </>
+        }
+        subtitle="Games, practices, and events across all three teams — one schedule, one view."
+      />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-16">
+        <EditorialDivider label="Calendar" />
         {isAdmin && (
-          <span className="px-3 py-1 rounded-full bg-carolina/10 text-carolina-dark text-xs font-heading font-bold uppercase tracking-wider">
-            Admin Mode — Click to edit, drag to move
-          </span>
+          <div className="flex justify-end mb-6">
+            <span className="px-3 py-1 rounded-full bg-carolina/10 text-carolina-dark text-xs font-heading font-bold uppercase tracking-wider">
+              Admin Mode — Click to edit, drag to move
+            </span>
+          </div>
         )}
-      </div>
 
       {/* Filters */}
       <div className="flex flex-wrap gap-4 mb-6">
@@ -643,7 +652,8 @@ export default function CalendarPage() {
       {viewing && (
         <EventDetailPopup event={viewing} onClose={() => setViewing(null)} />
       )}
-    </div>
+      </main>
+    </>
   );
 }
 

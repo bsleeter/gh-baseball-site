@@ -22,6 +22,7 @@
   --font-display: "Bebas Neue", sans-serif;
   --font-heading: "Barlow Condensed", sans-serif;
   --font-body: "Barlow", sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
 }
 
 html {
@@ -71,6 +72,38 @@ body {
 .card-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(27, 42, 74, 0.12);
+}
+
+/* Records page — engraved plaque aesthetic */
+@keyframes record-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.record-cell {
+  animation: record-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.record-ledger {
+  background-image:
+    linear-gradient(180deg, rgba(27, 42, 74, 0.04) 0%, transparent 1px),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 47px,
+      rgba(27, 42, 74, 0.035) 47px,
+      rgba(27, 42, 74, 0.035) 48px
+    );
+}
+.record-paper {
+  background-color: #FBFAF5;
+  background-image:
+    radial-gradient(ellipse at top, rgba(27, 42, 74, 0.03), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(201, 169, 74, 0.04), transparent 60%);
 }
 
 @keyframes slide-down {
