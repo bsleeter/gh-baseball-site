@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
+import ChampionshipBanner, { StateChampionsRow } from "@/components/ChampionshipBanner";
 import { useGames, useAllGames } from "@/lib/hooks";
 import type { DbGame } from "@/lib/database";
 
@@ -51,8 +52,15 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-navy" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-20 sm:pt-12 sm:pb-28">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
           <div className="max-w-2xl">
+            <div className="mb-3">
+              <StateChampionsRow size="sm" />
+            </div>
+            <div className="mb-6">
+              <ChampionshipBanner />
+            </div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px flex-1 max-w-[60px] bg-carolina" />
               <span className="font-heading font-bold text-carolina-light text-xs uppercase tracking-[0.25em]">
@@ -81,6 +89,8 @@ export default function HomePage() {
                 <span className="score-display text-2xl text-white">{cRecord.wins}-{cRecord.losses}</span>
               </div>
             </div>
+          </div>
+
           </div>
         </div>
 
