@@ -17,12 +17,12 @@ export const legacySingleSeasonBatting: LegacyRecord[] = [
   {
     stat: "Highest Average",
     value: ".538",
-    holders: [{ player: "Spencer Manjarrez", context: "35 H / 65 AB" }],
+    holders: [{ player: "Spencer Manjarrez", year: 2010, context: "35 H / 65 AB" }],
   },
   {
     stat: "Best On-Base %",
     value: ".677",
-    holders: [{ player: "Spencer Manjarrez" }],
+    holders: [{ player: "Spencer Manjarrez", year: 2010 }],
   },
   { stat: "Most Hits", value: "47", holders: [{ player: "Tim Friedman" }] },
   {
@@ -38,7 +38,7 @@ export const legacySingleSeasonBatting: LegacyRecord[] = [
     holders: [
       { player: "Tim Friedman" },
       { player: "David Bigelow" },
-      { player: "Spencer Manjarrez" },
+      { player: "Spencer Manjarrez", year: 2010 },
     ],
   },
   { stat: "Most Total Bases", value: "83", holders: [{ player: "Tim Friedman" }] },
@@ -54,7 +54,7 @@ export const legacySingleSeasonBatting: LegacyRecord[] = [
       { player: "Cooper McCutcheon", year: 2024 },
     ],
   },
-  { stat: "Most Stolen Bases", value: "26", holders: [{ player: "Spencer Manjarrez" }] },
+  { stat: "Most Stolen Bases", value: "26", holders: [{ player: "Spencer Manjarrez", year: 2010 }] },
   {
     stat: "Longest Hit Streak",
     value: "20",
