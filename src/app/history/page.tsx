@@ -50,10 +50,10 @@ export default function HistoryPage() {
             <div className="flex items-baseline justify-between gap-3">
               <div>
                 <div className="font-heading text-[10px] uppercase tracking-[0.28em] text-carolina-light mb-1">
-                  Career Leaders
+                  Player Records
                 </div>
                 <div className="font-display text-xl tracking-[0.04em] leading-tight">
-                  Editorial Career Records
+                  Career Leaders
                 </div>
                 <div
                   className="mt-2 text-white/65 leading-snug"
@@ -63,7 +63,8 @@ export default function HistoryPage() {
                     fontSize: "0.88rem",
                   }}
                 >
-                  Career hits, HR, ERA, WHIP — plus rate-stat leaders.
+                  The all-time leader per career stat — hits, HRs, ERA, WHIP,
+                  and rate-stat leaders.
                 </div>
               </div>
               <span className="font-display text-2xl text-carolina-light shrink-0 group-hover:translate-x-1 transition-transform">
@@ -82,7 +83,7 @@ export default function HistoryPage() {
                   Team Records
                 </div>
                 <div className="font-display text-xl tracking-[0.04em] leading-tight">
-                  Season Highs &amp; Championships
+                  Team &amp; Game Records
                 </div>
                 <div
                   className="mt-2 text-white/65 leading-snug"
@@ -92,8 +93,8 @@ export default function HistoryPage() {
                     fontSize: "0.88rem",
                   }}
                 >
-                  Most wins, lowest team ERA, single-game peaks, postseason
-                  honors.
+                  Most team wins, lowest team ERA, single-game peaks,
+                  postseason honors.
                 </div>
               </div>
               <span className="font-display text-2xl text-amber-300 shrink-0 group-hover:translate-x-1 transition-transform">
@@ -109,10 +110,10 @@ export default function HistoryPage() {
             <div className="flex items-baseline justify-between gap-3">
               <div>
                 <div className="font-heading text-[10px] uppercase tracking-[0.28em] text-carolina-dark mb-1">
-                  Deep Leaderboards
+                  Player Rankings
                 </div>
                 <div className="font-display text-xl tracking-[0.04em] text-navy leading-tight">
-                  Top-10 Lists
+                  Top-10 Lists · Season &amp; Career
                 </div>
                 <div
                   className="mt-2 text-navy/65 leading-snug"
@@ -122,7 +123,7 @@ export default function HistoryPage() {
                     fontSize: "0.88rem",
                   }}
                 >
-                  Single-season + career ranks 1-10, with BBCOR-era filter.
+                  Ranks 1-10 for every category, with BBCOR-era filter.
                 </div>
               </div>
               <span className="font-display text-2xl text-navy/40 shrink-0 group-hover:translate-x-1 transition-transform">
