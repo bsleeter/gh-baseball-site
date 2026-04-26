@@ -177,21 +177,66 @@ export default function HistoryPage() {
   );
 }
 
+interface Honor {
+  label: string;
+  /** Banner color class, used only for the top (most-prestigious) honor. */
+  bannerCls: string;
+  /** Inline pill color class (used when honor isn't on the banner). */
+  pillCls: string;
+}
+
+/** Build the ordered list of honors a season earned, most-prestigious first.
+ *  Order: State Champ → State medal (2nd/3rd) → District Champ → League
+ *         Champ → Made-State (4th-16th). */
+function honorsFor(season: Season): Honor[] {
+  const out: Honor[] = [];
+  const sp = season.statePlace;
+  if (season.stateChamp) {
+    out.push({
+      label: "State Champs",
+      bannerCls: "bg-amber-400 text-navy",
+      pillCls: "border-amber-400/70 bg-amber-50 text-amber-900",
+    });
+  } else if (sp === 2 || sp === 3) {
+    out.push({
+      label: sp === 2 ? "2nd at State" : "3rd at State",
+      bannerCls: "bg-stone-300 text-navy",
+      pillCls: "border-stone-300 bg-stone-50 text-stone-700",
+    });
+  }
+  if (season.districtChamp) {
+    out.push({
+      label: "District Champs",
+      bannerCls: "bg-carolina text-white",
+      pillCls: "border-carolina/40 bg-carolina/10 text-carolina-dark",
+    });
+  }
+  if (season.leagueChamp) {
+    out.push({
+      label: "League Champs",
+      bannerCls: "bg-navy text-white",
+      pillCls: "border-navy/30 bg-navy/[0.04] text-navy",
+    });
+  }
+  // Made-state-but-not-podium goes last (less prestigious than league title)
+  if (sp && sp > 3) {
+    out.push({
+      label: `T-${sp} @ State`,
+      bannerCls: "bg-stone-200 text-navy",
+      pillCls: "border-navy/15 bg-white text-navy/65",
+    });
+  }
+  return out;
+}
+
 function YearCard({ season }: { season: Season }) {
   const recordStr = season.record
     ? `${season.record.W}–${season.record.L}`
     : "—";
-  const isStateChamp = season.stateChamp;
-  const isDistrictChamp = season.districtChamp;
-  const isLeagueChamp = season.leagueChamp;
-  const top3 = season.statePlace;
 
-  // Choose a banner color: state > district > league > 3rd
-  let banner: { label: string; cls: string } | null = null;
-  if (isStateChamp) banner = { label: "State Champs", cls: "bg-amber-400 text-navy" };
-  else if (isDistrictChamp) banner = { label: "District Champs", cls: "bg-carolina text-white" };
-  else if (top3) banner = { label: `${top3 === 2 ? "2nd" : "3rd"} at State`, cls: "bg-stone-300 text-navy" };
-  else if (isLeagueChamp) banner = { label: "League Champs", cls: "bg-navy text-white" };
+  const honors = honorsFor(season);
+  const banner = honors[0];
+  const secondaryHonors = honors.slice(1);
 
   return (
     <Link
@@ -200,7 +245,7 @@ function YearCard({ season }: { season: Season }) {
     >
       {banner && (
         <div
-          className={`text-[9px] font-heading font-bold uppercase tracking-[0.18em] py-1 px-2 text-center ${banner.cls}`}
+          className={`text-[9px] font-heading font-bold uppercase tracking-[0.18em] py-1 px-2 text-center ${banner.bannerCls}`}
         >
           {banner.label}
         </div>
@@ -229,6 +274,18 @@ function YearCard({ season }: { season: Season }) {
             }}
           >
             {season.league}
+          </div>
+        )}
+        {secondaryHonors.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1">
+            {secondaryHonors.map((h) => (
+              <span
+                key={h.label}
+                className={`text-[8.5px] font-heading font-bold uppercase tracking-[0.16em] border rounded px-1.5 py-0.5 ${h.pillCls}`}
+              >
+                {h.label}
+              </span>
+            ))}
           </div>
         )}
         <div className="mt-2 flex items-center gap-1.5">

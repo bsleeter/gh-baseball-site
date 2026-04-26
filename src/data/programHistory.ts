@@ -86,6 +86,8 @@ export interface ScheduleGame {
   r?: number;
   h?: number;
   e?: number;
+  /** Free-form note rendered under the opponent (e.g. "State Tournament"). */
+  notes?: string;
   [extra: string]: unknown;
 }
 

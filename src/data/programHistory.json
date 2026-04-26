@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-25T06:44:08.990323Z",
+    "generatedAt": "2026-04-26T05:18:11.905980Z",
     "bbcorEraStart": 2012,
     "yearsAvailable": [
       1990,
@@ -4244,7 +4244,7 @@
       "leagueChamp": false,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 9,
       "record": {
         "W": 17,
         "L": 5
@@ -5075,7 +5075,7 @@
       "leagueChamp": false,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 5,
       "record": {
         "W": 18,
         "L": 4
@@ -18803,7 +18803,7 @@
       "leagueChamp": true,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 9,
       "record": {
         "W": 18,
         "L": 6
@@ -19713,7 +19713,7 @@
       "leagueChamp": false,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 9,
       "record": {
         "W": 16,
         "L": 8
@@ -25008,7 +25008,7 @@
       "leagueChamp": true,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 5,
       "record": {
         "W": 17,
         "L": 8
@@ -27105,7 +27105,7 @@
       "leagueChamp": true,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 9,
       "record": {
         "W": 15,
         "L": 9
@@ -29043,9 +29043,9 @@
       "leagueChamp": false,
       "districtChamp": false,
       "stateChamp": false,
-      "statePlace": null,
+      "statePlace": 9,
       "record": {
-        "W": 9,
+        "W": 10,
         "L": 14
       },
       "headCoach": "Shane Hannon",
@@ -29055,137 +29055,315 @@
         {
           "num": null,
           "player": "Chase Pringle",
-          "grade": null,
+          "grade": 12,
           "playerId": "chase-pringle"
         },
         {
           "num": null,
           "player": "Brady Altman",
-          "grade": null,
+          "grade": 12,
           "playerId": "brady-altman"
         },
         {
           "num": null,
           "player": "Josh Dunham",
-          "grade": null,
+          "grade": 11,
           "playerId": "josh-dunham"
         },
         {
           "num": null,
           "player": "Ryland Heckman",
-          "grade": null,
+          "grade": 11,
           "playerId": "ryland-heckman"
         },
         {
           "num": null,
           "player": "Cooper McCutcheon",
-          "grade": null,
+          "grade": 11,
           "playerId": "cooper-mccutcheon"
         },
         {
           "num": null,
           "player": "Jayce Corley",
-          "grade": null,
+          "grade": 10,
           "playerId": "jayce-corley"
         },
         {
           "num": null,
           "player": "Cole Krilich",
-          "grade": null,
+          "grade": 10,
           "playerId": "cole-krilich"
         },
         {
           "num": null,
           "player": "Nick Lang",
-          "grade": null,
+          "grade": 11,
           "playerId": "nick-lang"
         },
         {
           "num": null,
           "player": "Daniel Porras",
-          "grade": null,
+          "grade": 10,
           "playerId": "daniel-porras"
         },
         {
           "num": null,
           "player": "Cutter Peterson",
-          "grade": null,
+          "grade": 11,
           "playerId": "cutter-peterson"
         },
         {
           "num": null,
           "player": "Tristan Schaefer",
-          "grade": null,
+          "grade": 11,
           "playerId": "tristan-schaefer"
         },
         {
           "num": null,
           "player": "Wesley Bonnici",
-          "grade": null,
+          "grade": 10,
           "playerId": "wesley-bonnici"
         },
         {
           "num": null,
           "player": "Alex Vela",
-          "grade": null,
+          "grade": 12,
           "playerId": "alex-vela"
         },
         {
           "num": null,
           "player": "Jay Clark",
-          "grade": null,
+          "grade": 12,
           "playerId": "jay-clark"
         },
         {
           "num": null,
           "player": "Hunter Payne",
-          "grade": null,
+          "grade": 9,
           "playerId": "hunter-payne"
         },
         {
           "num": null,
           "player": "Ethan Mar",
-          "grade": null,
+          "grade": 10,
           "playerId": "ethan-mar"
         },
         {
           "num": null,
           "player": "Sam Haddon",
-          "grade": null,
+          "grade": 12,
           "playerId": "sam-haddon"
         },
         {
           "num": null,
           "player": "Brendan Masini",
-          "grade": null,
+          "grade": 12,
           "playerId": "brendan-masini"
         },
         {
           "num": null,
           "player": "Cole Flowers",
-          "grade": null,
+          "grade": 11,
           "playerId": "cole-flowers"
         },
         {
           "num": null,
           "player": "Garrick Cosmos",
-          "grade": null,
+          "grade": 12,
           "playerId": "garrick-cosmos"
         },
         {
           "num": null,
           "player": "Riley Westfall",
-          "grade": null,
+          "grade": 11,
           "playerId": "riley-westfall"
         },
         {
           "num": null,
           "player": "Ryan Vorpahl",
-          "grade": null,
+          "grade": 12,
           "playerId": "ryan-vorpahl"
         }
       ],
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "Mar 11, 2023",
+          "loc": "Neutral",
+          "opponent": "Richland",
+          "w_l": "L",
+          "score": "0-7",
+          "notes": "Tri-City Tournament"
+        },
+        {
+          "date": "Mar 11, 2023",
+          "loc": "Neutral",
+          "opponent": "Sumner",
+          "w_l": "L",
+          "score": "4-6",
+          "notes": "Tri-City Tournament"
+        },
+        {
+          "date": "Mar 21, 2023",
+          "loc": "Away",
+          "opponent": "Yelm",
+          "w_l": "W",
+          "score": "13-2"
+        },
+        {
+          "date": "Mar 22, 2023",
+          "loc": "Home",
+          "opponent": "Yelm",
+          "w_l": "W",
+          "score": "10-0"
+        },
+        {
+          "date": "Mar 28, 2023",
+          "loc": "Home",
+          "opponent": "River Ridge",
+          "w_l": "W",
+          "score": "5-1"
+        },
+        {
+          "date": "Mar 29, 2023",
+          "loc": "Away",
+          "opponent": "River Ridge",
+          "w_l": "L",
+          "score": "1-3"
+        },
+        {
+          "date": "Apr 3, 2023",
+          "loc": "Home",
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "4-3"
+        },
+        {
+          "date": "Apr 4, 2023",
+          "loc": "Away",
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "7-3"
+        },
+        {
+          "date": "Apr 8, 2023",
+          "loc": "Neutral",
+          "opponent": "Prairie",
+          "w_l": "L",
+          "score": "12-16",
+          "notes": "Non-league \u00b7 at Central Kitsap HS"
+        },
+        {
+          "date": "Apr 11, 2023",
+          "loc": "Home",
+          "opponent": "Timberline",
+          "w_l": "W",
+          "score": "10-5"
+        },
+        {
+          "date": "Apr 14, 2023",
+          "loc": "Away",
+          "opponent": "Timberline",
+          "w_l": "L",
+          "score": "1-6"
+        },
+        {
+          "date": "Apr 18, 2023",
+          "loc": "Home",
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "20-3"
+        },
+        {
+          "date": "Apr 22, 2023",
+          "loc": "Neutral",
+          "opponent": "Capital",
+          "w_l": "L",
+          "score": "3-4",
+          "notes": "at Regional Athletic Complex"
+        },
+        {
+          "date": "Apr 25, 2023",
+          "loc": "Away",
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "8-0"
+        },
+        {
+          "date": "Apr 26, 2023",
+          "loc": "Home",
+          "opponent": "North Thurston",
+          "w_l": "L",
+          "score": "6-12"
+        },
+        {
+          "date": "Apr 27, 2023",
+          "loc": "Neutral",
+          "opponent": "Bainbridge",
+          "w_l": "L",
+          "score": "3-4",
+          "notes": "at Cheney Stadium"
+        },
+        {
+          "date": "May 2, 2023",
+          "loc": "Away",
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "11-2"
+        },
+        {
+          "date": "May 3, 2023",
+          "loc": "Home",
+          "opponent": "Peninsula",
+          "w_l": "L",
+          "score": "0-1"
+        },
+        {
+          "date": "May 4, 2023",
+          "loc": "Away",
+          "opponent": "Rogers",
+          "w_l": "L",
+          "score": "5-15"
+        },
+        {
+          "date": "May 5, 2023",
+          "loc": "Home",
+          "opponent": "South Kitsap",
+          "w_l": "L",
+          "score": "7-13"
+        },
+        {
+          "date": "May 9, 2023",
+          "loc": "Away",
+          "opponent": "Prairie",
+          "w_l": "W",
+          "score": "12-4",
+          "notes": "District Tournament \u2014 1st Round"
+        },
+        {
+          "date": "May 13, 2023",
+          "loc": "Neutral",
+          "opponent": "Timberline",
+          "w_l": "L",
+          "score": "7-8",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 13, 2023",
+          "loc": "Neutral",
+          "opponent": "Silas",
+          "w_l": "L",
+          "score": "3-4",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 16, 2023",
+          "loc": "Neutral",
+          "opponent": "Stadium",
+          "w_l": "L",
+          "score": "4-7",
+          "notes": "State Tournament \u2014 1st Round"
+        }
+      ],
       "battingLines": [
         {
           "player": "Chase Pringle",
@@ -30151,7 +30329,7 @@
       "statePlace": null,
       "record": {
         "W": 14,
-        "L": 9
+        "L": 11
       },
       "headCoach": "Shane Hannon",
       "coaches": [],
@@ -30160,125 +30338,307 @@
         {
           "num": null,
           "player": "Daniel Porras",
-          "grade": null,
+          "grade": 11,
           "playerId": "daniel-porras"
         },
         {
           "num": null,
           "player": "Ryland Heckman",
-          "grade": null,
+          "grade": 12,
           "playerId": "ryland-heckman"
         },
         {
           "num": null,
           "player": "Tristan Schaefer",
-          "grade": null,
+          "grade": 12,
           "playerId": "tristan-schaefer"
         },
         {
           "num": null,
           "player": "Cooper McCutcheon",
-          "grade": null,
+          "grade": 12,
           "playerId": "cooper-mccutcheon"
         },
         {
           "num": null,
           "player": "Ethan Mar",
-          "grade": null,
+          "grade": 11,
           "playerId": "ethan-mar"
         },
         {
           "num": null,
           "player": "Josh Dunham",
-          "grade": null,
+          "grade": 12,
           "playerId": "josh-dunham"
         },
         {
           "num": null,
           "player": "Hunter Payne",
-          "grade": null,
+          "grade": 10,
           "playerId": "hunter-payne"
         },
         {
           "num": null,
           "player": "Jayce Corley",
-          "grade": null,
+          "grade": 11,
           "playerId": "jayce-corley"
         },
         {
           "num": null,
           "player": "Cole Krilich",
-          "grade": null,
+          "grade": 11,
           "playerId": "cole-krilich"
         },
         {
           "num": null,
           "player": "Justin Grande",
-          "grade": null,
+          "grade": 12,
           "playerId": "justin-grande"
         },
         {
           "num": null,
           "player": "Cutter Peterson",
-          "grade": null,
+          "grade": 12,
           "playerId": "cutter-peterson"
         },
         {
           "num": null,
           "player": "Wesley Bonnici",
-          "grade": null,
+          "grade": 11,
           "playerId": "wesley-bonnici"
         },
         {
           "num": null,
           "player": "Nick Lang",
-          "grade": null,
+          "grade": 12,
           "playerId": "nick-lang"
         },
         {
           "num": null,
           "player": "Zach Smith",
-          "grade": null,
+          "grade": 9,
           "playerId": "zach-smith"
         },
         {
           "num": null,
           "player": "Mason Sams",
-          "grade": null,
+          "grade": 10,
           "playerId": "mason-sams"
         },
         {
           "num": null,
           "player": "Cole Flowers",
-          "grade": null,
+          "grade": 12,
           "playerId": "cole-flowers"
         },
         {
           "num": null,
           "player": "Greyson Riley",
-          "grade": null,
+          "grade": 10,
           "playerId": "greyson-riley"
         },
         {
           "num": null,
           "player": "Jake Cuda",
-          "grade": null,
+          "grade": 10,
           "playerId": "jake-cuda"
         },
         {
           "num": null,
           "player": "Quentin Bockhorn",
-          "grade": null,
+          "grade": 10,
           "playerId": "quentin-bockhorn"
         },
         {
           "num": null,
           "player": "Riley Westfall",
-          "grade": null,
+          "grade": 12,
           "playerId": "riley-westfall"
         }
       ],
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "Mar 13, 2024",
+          "loc": "Away",
+          "opponent": "Curtis",
+          "w_l": "L",
+          "score": "6-10"
+        },
+        {
+          "date": "Mar 16, 2024",
+          "loc": "Neutral",
+          "opponent": "Richland",
+          "w_l": "L",
+          "score": "0-1",
+          "notes": "Tri-City Tournament"
+        },
+        {
+          "date": "Mar 16, 2024",
+          "loc": "Neutral",
+          "opponent": "Mercer Island",
+          "w_l": "W",
+          "score": "4-0",
+          "notes": "Tri-City Tournament"
+        },
+        {
+          "date": "Mar 19, 2024",
+          "loc": "Home",
+          "opponent": "Yelm",
+          "w_l": "W",
+          "score": "14-4"
+        },
+        {
+          "date": "Mar 20, 2024",
+          "loc": "Away",
+          "opponent": "Yelm",
+          "w_l": "L",
+          "score": "5-6"
+        },
+        {
+          "date": "Mar 23, 2024",
+          "loc": "Away",
+          "opponent": "Monroe",
+          "w_l": "L",
+          "score": "2-3"
+        },
+        {
+          "date": "Mar 26, 2024",
+          "loc": "Away",
+          "opponent": "River Ridge",
+          "w_l": "W",
+          "score": "8-1"
+        },
+        {
+          "date": "Mar 27, 2024",
+          "loc": "Home",
+          "opponent": "River Ridge",
+          "w_l": "W",
+          "score": "10-0"
+        },
+        {
+          "date": "Mar 29, 2024",
+          "loc": "Away",
+          "opponent": "Silas",
+          "w_l": "W",
+          "score": "10-2"
+        },
+        {
+          "date": "Apr 1, 2024",
+          "loc": "Away",
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "3-0"
+        },
+        {
+          "date": "Apr 2, 2024",
+          "loc": "Home",
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "8-5"
+        },
+        {
+          "date": "Apr 6, 2024",
+          "loc": "Home",
+          "opponent": "South Kitsap",
+          "w_l": "W",
+          "score": "7-4"
+        },
+        {
+          "date": "Apr 9, 2024",
+          "loc": "Home",
+          "opponent": "Timberline",
+          "w_l": "W",
+          "score": "3-0"
+        },
+        {
+          "date": "Apr 10, 2024",
+          "loc": "Away",
+          "opponent": "Timberline",
+          "w_l": "L",
+          "score": "2-3"
+        },
+        {
+          "date": "Apr 15, 2024",
+          "loc": "Away",
+          "opponent": "Capital",
+          "w_l": "L",
+          "score": "0-2"
+        },
+        {
+          "date": "Apr 16, 2024",
+          "loc": "Home",
+          "opponent": "Capital",
+          "w_l": "L",
+          "score": "1-4"
+        },
+        {
+          "date": "Apr 23, 2024",
+          "loc": "Home",
+          "opponent": "North Thurston",
+          "w_l": "L",
+          "score": "3-9"
+        },
+        {
+          "date": "Apr 24, 2024",
+          "loc": "Away",
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "8-6"
+        },
+        {
+          "date": "Apr 30, 2024",
+          "loc": "Home",
+          "opponent": "Peninsula",
+          "w_l": "L",
+          "score": "0-4"
+        },
+        {
+          "date": "May 1, 2024",
+          "loc": "Away",
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "5-3"
+        },
+        {
+          "date": "May 3, 2024",
+          "loc": "Home",
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "6-2"
+        },
+        {
+          "date": "May 7, 2024",
+          "loc": "Neutral",
+          "opponent": "Kelso",
+          "w_l": "L",
+          "score": "1-6",
+          "notes": "District Tournament \u2014 1st Round"
+        },
+        {
+          "date": "May 8, 2024",
+          "loc": "Home",
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "5-3",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 11, 2024",
+          "loc": "Neutral",
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "3-0",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 14, 2024",
+          "loc": "Neutral",
+          "opponent": "Mercer Island",
+          "w_l": "L",
+          "score": "1-13",
+          "notes": "State Tournament \u2014 1st Round"
+        }
+      ],
       "battingLines": [
         {
           "player": "Daniel Porras",
@@ -31078,119 +31438,323 @@
         {
           "num": null,
           "player": "Jayce Corley",
-          "grade": null,
+          "grade": 12,
           "playerId": "jayce-corley"
         },
         {
           "num": null,
           "player": "Daniel Porras",
-          "grade": null,
+          "grade": 12,
           "playerId": "daniel-porras"
         },
         {
           "num": null,
           "player": "Wesley Bonnici",
-          "grade": null,
+          "grade": 12,
           "playerId": "wesley-bonnici"
         },
         {
           "num": null,
           "player": "Cole Krilich",
-          "grade": null,
+          "grade": 12,
           "playerId": "cole-krilich"
         },
         {
           "num": null,
           "player": "Greyson Riley",
-          "grade": null,
+          "grade": 11,
           "playerId": "greyson-riley"
         },
         {
           "num": null,
           "player": "Hunter Payne",
-          "grade": null,
+          "grade": 11,
           "playerId": "hunter-payne"
         },
         {
           "num": null,
           "player": "Ethan Mar",
-          "grade": null,
+          "grade": 12,
           "playerId": "ethan-mar"
         },
         {
           "num": null,
           "player": "Troy Tackett",
-          "grade": null,
+          "grade": 12,
           "playerId": "troy-tackett"
         },
         {
           "num": null,
           "player": "Zach Smith",
-          "grade": null,
+          "grade": 10,
           "playerId": "zach-smith"
         },
         {
           "num": null,
           "player": "Mason Sams",
-          "grade": null,
+          "grade": 11,
           "playerId": "mason-sams"
         },
         {
           "num": null,
           "player": "Jake Cuda",
-          "grade": null,
+          "grade": 11,
           "playerId": "jake-cuda"
         },
         {
           "num": null,
           "player": "Tanner Kelley",
-          "grade": null,
+          "grade": 12,
           "playerId": "tanner-kelley"
         },
         {
           "num": null,
           "player": "Logan Pedersen",
-          "grade": null,
+          "grade": 11,
           "playerId": "logan-pedersen"
         },
         {
           "num": null,
           "player": "Quentin Bockhorn",
-          "grade": null,
+          "grade": 11,
           "playerId": "quentin-bockhorn"
         },
         {
           "num": null,
           "player": "Jackson Thomas",
-          "grade": null,
+          "grade": 12,
           "playerId": "jackson-thomas"
         },
         {
           "num": null,
           "player": "Kyle Anderson",
-          "grade": null,
+          "grade": 11,
           "playerId": "kyle-anderson"
         },
         {
           "num": null,
           "player": "Max Bergford",
-          "grade": null,
+          "grade": 9,
           "playerId": "max-bergford"
         },
         {
           "num": null,
           "player": "Nathan Cheek",
-          "grade": null,
+          "grade": 11,
           "playerId": "nathan-cheek"
         },
         {
           "num": null,
           "player": "Sawyer Payne",
-          "grade": null,
+          "grade": 9,
           "playerId": "sawyer-payne"
         }
       ],
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "Mar 12, 2025",
+          "loc": "Away",
+          "opponent": "Rogers",
+          "w_l": "W",
+          "score": "4-3"
+        },
+        {
+          "date": "Mar 19, 2025",
+          "loc": "Home",
+          "opponent": "River Ridge",
+          "w_l": "W",
+          "score": "13-2"
+        },
+        {
+          "date": "Mar 21, 2025",
+          "loc": "Home",
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "12-0"
+        },
+        {
+          "date": "Mar 22, 2025",
+          "loc": "Home",
+          "opponent": "West Seattle",
+          "w_l": "W",
+          "score": "2-0"
+        },
+        {
+          "date": "Mar 25, 2025",
+          "loc": "Home",
+          "opponent": "Bellarmine Prep",
+          "w_l": "W",
+          "score": "5-3"
+        },
+        {
+          "date": "Mar 29, 2025",
+          "loc": "Home",
+          "opponent": "Prairie",
+          "w_l": "W",
+          "score": "7-1"
+        },
+        {
+          "date": "Apr 1, 2025",
+          "loc": "Away",
+          "opponent": "Silas",
+          "w_l": "W",
+          "score": "4-0"
+        },
+        {
+          "date": "Apr 2, 2025",
+          "loc": "Home",
+          "opponent": "Silas",
+          "w_l": "W",
+          "score": "3-0"
+        },
+        {
+          "date": "Apr 8, 2025",
+          "loc": "Home",
+          "opponent": "Lincoln",
+          "w_l": "W",
+          "score": "10-1"
+        },
+        {
+          "date": "Apr 8, 2025",
+          "loc": "Away",
+          "opponent": "Lincoln",
+          "w_l": "W",
+          "score": "15-0"
+        },
+        {
+          "date": "Apr 11, 2025",
+          "loc": "Away",
+          "opponent": "Bellarmine Prep",
+          "w_l": "W",
+          "score": "4-1"
+        },
+        {
+          "date": "Apr 14, 2025",
+          "loc": "Home",
+          "opponent": "Mount Tahoma",
+          "w_l": "W",
+          "score": "11-1"
+        },
+        {
+          "date": "Apr 15, 2025",
+          "loc": "Away",
+          "opponent": "Mount Tahoma",
+          "w_l": "W",
+          "score": "11-0"
+        },
+        {
+          "date": "Apr 16, 2025",
+          "loc": "Away",
+          "opponent": "Lakes",
+          "w_l": "W",
+          "score": "16-1"
+        },
+        {
+          "date": "Apr 19, 2025",
+          "loc": "Away",
+          "opponent": "Port Angeles",
+          "w_l": "W",
+          "score": "8-1"
+        },
+        {
+          "date": "Apr 22, 2025",
+          "loc": "Away",
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "1-0"
+        },
+        {
+          "date": "Apr 23, 2025",
+          "loc": "Home",
+          "opponent": "Central Kitsap",
+          "w_l": "L",
+          "score": "0-2"
+        },
+        {
+          "date": "Apr 25, 2025",
+          "loc": "Away",
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "5-0"
+        },
+        {
+          "date": "Apr 29, 2025",
+          "loc": "Away",
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "7-0"
+        },
+        {
+          "date": "Apr 30, 2025",
+          "loc": "Home",
+          "opponent": "Timberline",
+          "w_l": "W",
+          "score": "7-1"
+        },
+        {
+          "date": "May 3, 2025",
+          "loc": "Neutral",
+          "opponent": "Fife",
+          "w_l": "W",
+          "score": "7-2"
+        },
+        {
+          "date": "May 5, 2025",
+          "loc": "Neutral",
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "7-5",
+          "notes": "SSC Championship \u00b7 at Lincoln HS"
+        },
+        {
+          "date": "May 13, 2025",
+          "loc": "Home",
+          "opponent": "Kelso",
+          "w_l": "W",
+          "score": "1-0",
+          "notes": "District Tournament \u2014 1st Round"
+        },
+        {
+          "date": "May 17, 2025",
+          "loc": "Neutral",
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "3-2",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 17, 2025",
+          "loc": "Neutral",
+          "opponent": "Peninsula",
+          "w_l": "L",
+          "score": "2-4",
+          "notes": "District Tournament"
+        },
+        {
+          "date": "May 24, 2025",
+          "loc": "Neutral",
+          "opponent": "West Seattle",
+          "w_l": "W",
+          "score": "3-2",
+          "notes": "State Tournament \u2014 1st Round"
+        },
+        {
+          "date": "May 24, 2025",
+          "loc": "Neutral",
+          "opponent": "Inglemoor",
+          "w_l": "W",
+          "score": "6-2",
+          "notes": "State Tournament"
+        },
+        {
+          "date": "May 30, 2025",
+          "loc": "Neutral",
+          "opponent": "Kennewick",
+          "w_l": "L",
+          "score": "5-12",
+          "notes": "State Tournament"
+        }
+      ],
       "battingLines": [
         {
           "player": "Jayce Corley",
@@ -32013,127 +32577,127 @@
         {
           "num": null,
           "player": "Hunter Payne",
-          "grade": null,
+          "grade": 12,
           "playerId": "hunter-payne"
         },
         {
           "num": null,
           "player": "Jake Cuda",
-          "grade": null,
+          "grade": 12,
           "playerId": "jake-cuda"
         },
         {
           "num": null,
           "player": "Zach Smith",
-          "grade": null,
+          "grade": 11,
           "playerId": "zach-smith"
         },
         {
           "num": null,
           "player": "Jason Coray",
-          "grade": null,
+          "grade": 10,
           "playerId": "jason-coray"
         },
         {
           "num": null,
           "player": "Camden Bentley",
-          "grade": null,
+          "grade": 11,
           "playerId": "camden-bentley"
         },
         {
           "num": null,
           "player": "Greyson Riley",
-          "grade": null,
+          "grade": 12,
           "playerId": "greyson-riley"
         },
         {
           "num": null,
           "player": "Mason Sams",
-          "grade": null,
+          "grade": 12,
           "playerId": "mason-sams"
         },
         {
           "num": null,
           "player": "Daniel Sleeter",
-          "grade": null,
+          "grade": 10,
           "playerId": "daniel-sleeter"
         },
         {
           "num": null,
           "player": "Carter Collins",
-          "grade": null,
+          "grade": 12,
           "playerId": "carter-collins"
         },
         {
           "num": null,
           "player": "Spencer Harthorn",
-          "grade": null,
+          "grade": 9,
           "playerId": "spencer-harthorn"
         },
         {
           "num": null,
           "player": "Hawken Smith",
-          "grade": null,
+          "grade": 10,
           "playerId": "hawken-smith"
         },
         {
           "num": null,
           "player": "Jack Price",
-          "grade": null,
+          "grade": 12,
           "playerId": "jack-price"
         },
         {
           "num": null,
           "player": "Hudson Smith",
-          "grade": null,
+          "grade": 12,
           "playerId": "hudson-smith"
         },
         {
           "num": null,
           "player": "Sawyer Payne",
-          "grade": null,
+          "grade": 10,
           "playerId": "sawyer-payne"
         },
         {
           "num": null,
           "player": "Jaxson Knight",
-          "grade": null,
+          "grade": 11,
           "playerId": "jaxson-knight"
         },
         {
           "num": null,
           "player": "Parker Wilson",
-          "grade": null,
+          "grade": 11,
           "playerId": "parker-wilson"
         },
         {
           "num": null,
           "player": "Kyle Anderson",
-          "grade": null,
+          "grade": 12,
           "playerId": "kyle-anderson"
         },
         {
           "num": null,
           "player": "Logan Pedersen",
-          "grade": null,
+          "grade": 12,
           "playerId": "logan-pedersen"
         },
         {
           "num": null,
           "player": "Max Bergford",
-          "grade": null,
+          "grade": 10,
           "playerId": "max-bergford"
         },
         {
           "num": null,
           "player": "Nathan Cheek",
-          "grade": null,
+          "grade": 12,
           "playerId": "nathan-cheek"
         },
         {
           "num": null,
           "player": "Quentin Bockhorn",
-          "grade": null,
+          "grade": 12,
           "playerId": "quentin-bockhorn"
         }
       ],
