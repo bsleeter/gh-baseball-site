@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-26T05:18:11.905980Z",
+    "generatedAt": "2026-04-26T06:00:18.200408Z",
     "bbcorEraStart": 2012,
     "yearsAvailable": [
       1990,
@@ -31422,7 +31422,7 @@
     "2025": {
       "year": 2025,
       "era": "bbcor",
-      "league": "3A SSC",
+      "league": "Puget Sound League \u00b7 Narrows Division",
       "leagueChamp": true,
       "districtChamp": false,
       "stateChamp": false,
@@ -32561,7 +32561,7 @@
     "2026": {
       "year": 2026,
       "era": "bbcor",
-      "league": "3A SSC",
+      "league": "Puget Sound League \u00b7 Narrows Division",
       "leagueChamp": false,
       "districtChamp": false,
       "stateChamp": false,

@@ -8,9 +8,8 @@ import {
   formatRatio,
   formatERA,
   type Season,
-  type ScheduleGame,
 } from "@/data/programHistory";
-import { varsitySchedule } from "@/data/schedule";
+import LiveSchedule from "./LiveSchedule";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader, { EditorialDivider } from "@/components/SectionHeader";
 import { BattingTable, PitchingTable } from "./StatTables";
@@ -26,42 +25,6 @@ function normalize(s: string): string {
     .replace(/[^a-z]/g, "");
 }
 
-/** Pull live schedule entries from the site's authoritative schedule.ts
- *  for the requested year. Used so the active season's year page
- *  reflects /schedule without duplicating data. */
-function liveScheduleFor(year: number): ScheduleGame[] {
-  const isoPrefix = `${year}-`;
-  return varsitySchedule
-    .filter((g) => g.type === "game" && g.date.startsWith(isoPrefix))
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .map((g) => {
-      // Format ISO date "2026-04-13" → "Apr 13, 2026" (matches archived
-      // schedules from older years).
-      const d = new Date(g.date + "T12:00:00");
-      const dateStr = d.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      });
-      const loc =
-        g.location === "home"
-          ? "Home"
-          : g.location === "away"
-            ? "Away"
-            : "Neutral";
-      const score =
-        g.scoreUs !== undefined && g.scoreThem !== undefined
-          ? `${g.scoreUs}-${g.scoreThem}`
-          : "";
-      return {
-        date: dateStr,
-        loc,
-        opponent: g.opponent,
-        w_l: g.result,
-        score,
-      } as ScheduleGame;
-    });
-}
 
 export function generateStaticParams() {
   return yearsAvailable.map((y) => ({ year: String(y) }));
@@ -94,13 +57,6 @@ export default async function YearPage({
 
   const leaderMap = buildSeasonLeaderMap(season);
   const hof = buildSeasonHallOfFame(season);
-
-  // For the active season, prefer the live schedule from src/data/schedule.ts
-  // (single source of truth shared with /schedule). Fall back to the archived
-  // schedule baked into programHistory.json for older years.
-  const liveGames = liveScheduleFor(season.year);
-  const scheduleGames =
-    liveGames.length > 0 ? liveGames : season.schedule;
   const hofBatting = hof.filter((h) => h.group === "batting");
   const hofPitching = hof.filter((h) => h.group === "pitching");
   const hofOther = hof.filter((h) => h.group === "other");
@@ -223,11 +179,15 @@ export default async function YearPage({
           )}
         </div>
 
-        {/* Roster + Schedule — side by side when both have data */}
-        {(season.roster.length > 0 || scheduleGames.length > 0) && (() => {
+        {/* Roster + Schedule — side by side. Schedule is live (Supabase)
+            for the active season, archived for older years. */}
+        {(() => {
           const showRoster = season.roster.length > 0;
-          const showSchedule = scheduleGames.length > 0;
-          const sideBySide = showRoster && showSchedule;
+          // Likely have a schedule if we have archived games OR this is a
+          // GameChanger-era season (Supabase may have live data).
+          const likelySchedule =
+            season.schedule.length > 0 || season.year >= 2023;
+          const sideBySide = showRoster && likelySchedule;
           return (
             <div
               className={`grid gap-6 ${sideBySide ? "lg:grid-cols-2" : "grid-cols-1"}`}
@@ -242,15 +202,11 @@ export default async function YearPage({
                   <RosterGrid season={season} />
                 </section>
               )}
-              {showSchedule && (
-                <section>
-                  <SectionHeader
-                    title="Schedule & Results"
-                    count={scheduleGames.length}
-                    countLabel="games"
-                  />
-                  <ScheduleTable games={scheduleGames} />
-                </section>
+              {likelySchedule && (
+                <LiveSchedule
+                  year={season.year}
+                  archived={season.schedule}
+                />
               )}
             </div>
           );
@@ -443,7 +399,7 @@ function PlayerColumns({
   showGrade: boolean;
 }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-1">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-1">
       {players.map((r) => (
         <div
           key={r.player + (r.num ?? "")}
@@ -481,130 +437,6 @@ function gradeLabel(g: number): string {
   if (g === 10) return "So";
   if (g === 9) return "Fr";
   return `Gr${g}`;
-}
-
-// ─── Schedule ───────────────────────────────────────────────────────
-
-function ScheduleTable({ games }: { games: ScheduleGame[] }) {
-  const hasRich = games.some((g) => g.date || g.w_l);
-  const tally = games.reduce<{ w: number; l: number; t: number }>(
-    (acc, g) => {
-      if (g.w_l === "W") acc.w += 1;
-      else if (g.w_l === "L") acc.l += 1;
-      else if (g.w_l === "T") acc.t += 1;
-      return acc;
-    },
-    { w: 0, l: 0, t: 0 },
-  );
-
-  if (!hasRich) {
-    // Simple opponent + result format (older years)
-    return (
-      <div className="bg-white border border-navy/15 rounded-md overflow-hidden">
-        <table className="w-full text-sm">
-          <thead className="bg-navy text-white">
-            <tr>
-              <th className="px-4 py-2.5 text-left font-heading text-[11px] uppercase tracking-[0.18em]">
-                Opponent
-              </th>
-              <th className="px-4 py-2.5 text-right font-heading text-[11px] uppercase tracking-[0.18em]">
-                Result (GH–Opp)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {games.map((g, i) => (
-              <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-navy/[0.02]"}>
-                <td
-                  className="px-4 py-2 text-navy"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {String(g.opponent ?? "")}
-                </td>
-                <td className="px-4 py-2 text-right font-display tabular-nums text-navy">
-                  {String(g.result_gh_opp ?? g.score ?? "")}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-
-  // Rich format with date / loc / W-L / score
-  return (
-    <div className="bg-white border border-navy/15 rounded-md overflow-x-auto">
-      {(tally.w + tally.l + tally.t) > 0 && (
-        <div className="flex items-baseline justify-between px-4 py-2 border-b border-navy/10 bg-navy/[0.02]">
-          <span className="font-heading text-[10px] uppercase tracking-[0.22em] text-navy/55">
-            Running Record
-          </span>
-          <span className="font-display text-base text-navy tabular-nums">
-            {tally.w}–{tally.l}
-            {tally.t > 0 && `–${tally.t}`}
-          </span>
-        </div>
-      )}
-      <table className="w-full text-sm">
-        <thead className="bg-navy text-white">
-          <tr>
-            <th className="px-3 py-2.5 text-left font-heading text-[11px] uppercase tracking-[0.18em]">
-              Date
-            </th>
-            <th className="px-3 py-2.5 text-left font-heading text-[11px] uppercase tracking-[0.18em]">
-              Loc
-            </th>
-            <th className="px-3 py-2.5 text-left font-heading text-[11px] uppercase tracking-[0.18em]">
-              Opponent
-            </th>
-            <th className="px-3 py-2.5 text-center font-heading text-[11px] uppercase tracking-[0.18em]">
-              W/L
-            </th>
-            <th className="px-3 py-2.5 text-right font-heading text-[11px] uppercase tracking-[0.18em]">
-              Score
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {games.map((g, i) => (
-            <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-navy/[0.02]"}>
-              <td className="px-3 py-2 text-navy/70 font-mono text-xs whitespace-nowrap">
-                {String(g.date ?? "")}
-              </td>
-              <td className="px-3 py-2 text-navy/60 text-xs">
-                {String(g.loc ?? "")}
-              </td>
-              <td className="px-3 py-2 text-navy">
-                <div style={{ fontFamily: "var(--font-serif)" }}>
-                  {String(g.opponent ?? "")}
-                </div>
-                {g.notes && (
-                  <div className="text-[10px] font-heading uppercase tracking-[0.18em] text-navy/45 mt-0.5">
-                    {String(g.notes)}
-                  </div>
-                )}
-              </td>
-              <td
-                className={`px-3 py-2 text-center font-display ${
-                  g.w_l === "W"
-                    ? "text-green-700"
-                    : g.w_l === "L"
-                      ? "text-red-700"
-                      : "text-navy/40"
-                }`}
-              >
-                {String(g.w_l ?? "")}
-              </td>
-              <td className="px-3 py-2 text-right font-display tabular-nums text-navy">
-                {String(g.score ?? "")}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
 }
 
 // ─── Highlights ──────────────────────────────────────────────────────
