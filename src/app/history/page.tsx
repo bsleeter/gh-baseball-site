@@ -186,8 +186,8 @@ interface Honor {
 }
 
 /** Build the ordered list of honors a season earned, most-prestigious first.
- *  Order: State Champ → State medal (2nd/3rd) → District Champ → League
- *         Champ → Made-State (4th-16th). */
+ *  Only top-4 state finishes are shown — losing in earlier rounds doesn't
+ *  earn a placement label. */
 function honorsFor(season: Season): Honor[] {
   const out: Honor[] = [];
   const sp = season.statePlace;
@@ -197,10 +197,22 @@ function honorsFor(season: Season): Honor[] {
       bannerCls: "bg-amber-400 text-navy",
       pillCls: "border-amber-400/70 bg-amber-50 text-amber-900",
     });
-  } else if (sp === 2 || sp === 3) {
+  } else if (sp === 2) {
     out.push({
-      label: sp === 2 ? "2nd at State" : "3rd at State",
+      label: "2nd at State",
       bannerCls: "bg-stone-300 text-navy",
+      pillCls: "border-stone-300 bg-stone-50 text-stone-700",
+    });
+  } else if (sp === 3) {
+    out.push({
+      label: "3rd at State",
+      bannerCls: "bg-stone-300 text-navy",
+      pillCls: "border-stone-300 bg-stone-50 text-stone-700",
+    });
+  } else if (sp === 4) {
+    out.push({
+      label: "4th at State",
+      bannerCls: "bg-stone-200 text-navy",
       pillCls: "border-stone-300 bg-stone-50 text-stone-700",
     });
   }
@@ -216,14 +228,6 @@ function honorsFor(season: Season): Honor[] {
       label: "League Champs",
       bannerCls: "bg-navy text-white",
       pillCls: "border-navy/30 bg-navy/[0.04] text-navy",
-    });
-  }
-  // Made-state-but-not-podium goes last (less prestigious than league title)
-  if (sp && sp > 3) {
-    out.push({
-      label: `T-${sp} @ State`,
-      bannerCls: "bg-stone-200 text-navy",
-      pillCls: "border-navy/15 bg-white text-navy/65",
     });
   }
   return out;
