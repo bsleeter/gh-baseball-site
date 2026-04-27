@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-26T06:28:47.478728Z",
+    "generatedAt": "2026-04-27T16:25:47.427755Z",
     "bbcorEraStart": 2012,
     "yearsAvailable": [
       1990,
@@ -6175,7 +6175,8 @@
           "SLG": 0.943,
           "PA": 112,
           "1B": 26,
-          "playerId": "tim-friedman"
+          "playerId": "tim-friedman",
+          "SB": 19
         },
         {
           "player": "Gilich",
@@ -7101,7 +7102,8 @@
           "SLG": 0.422,
           "PA": 84,
           "1B": 19,
-          "playerId": "anthony-gilich"
+          "playerId": "anthony-gilich",
+          "SB": 12
         },
         {
           "player": "Bienias",
@@ -7161,7 +7163,8 @@
           "SLG": 0.393,
           "PA": 77,
           "1B": 20,
-          "playerId": "derek-phill"
+          "playerId": "derek-phill",
+          "SB": 12
         },
         {
           "player": "Hano",
@@ -8073,7 +8076,8 @@
           "SLG": 0.265,
           "PA": 69,
           "1B": 11,
-          "playerId": "shane-yelish"
+          "playerId": "shane-yelish",
+          "SB": 4
         },
         {
           "player": "Snow",
@@ -8193,7 +8197,8 @@
           "SLG": 0.32,
           "PA": 51,
           "1B": 12,
-          "playerId": "justin-fagering"
+          "playerId": "justin-fagering",
+          "SB": 4
         },
         {
           "player": "Lyle",
@@ -9028,7 +9033,8 @@
           "SLG": 0.898,
           "PA": 71,
           "1B": 22,
-          "playerId": "jeff-vanderbilt"
+          "playerId": "jeff-vanderbilt",
+          "SB": 16
         },
         {
           "player": "Jendro",
@@ -10055,7 +10061,8 @@
           "SLG": 0.321,
           "PA": 61,
           "1B": 9,
-          "playerId": "tom-patterson"
+          "playerId": "tom-patterson",
+          "SB": 11
         },
         {
           "player": "Olsen",
@@ -11074,7 +11081,8 @@
           "SLG": 0.5,
           "PA": 44,
           "1B": 10,
-          "playerId": "david-jackson"
+          "playerId": "david-jackson",
+          "SB": 10
         },
         {
           "player": "Knox",
@@ -12102,7 +12110,8 @@
           "SLG": 0.439,
           "PA": 94,
           "1B": 26,
-          "playerId": "david-jackson"
+          "playerId": "david-jackson",
+          "SB": 12
         },
         {
           "player": "Medeiros",
@@ -13050,7 +13059,8 @@
           "SLG": 0.64,
           "PA": 84,
           "1B": 28,
-          "playerId": "cassidy-emery"
+          "playerId": "cassidy-emery",
+          "SB": 9
         },
         {
           "player": "Emmett",
@@ -15359,7 +15369,8 @@
           "SLG": 0.66,
           "SAC": 4,
           "PA": 73,
-          "playerId": "josiah-ward"
+          "playerId": "josiah-ward",
+          "SB": 13
         },
         {
           "player": "Gaube",
@@ -16199,7 +16210,8 @@
           "SLG": 0.556,
           "SAC": 0,
           "PA": 79,
-          "playerId": "nick-mareno"
+          "playerId": "nick-mareno",
+          "SB": 8
         },
         {
           "player": "Thompson",
@@ -17092,7 +17104,8 @@
           "SLG": 0.517,
           "SAC": 1,
           "PA": 77,
-          "playerId": "chet-thompson"
+          "playerId": "chet-thompson",
+          "SB": 16
         },
         {
           "player": "Holcomb",
@@ -18031,7 +18044,8 @@
           "SLG": 0.453,
           "SAC": 0,
           "PA": 74,
-          "playerId": "nico-youngren"
+          "playerId": "nico-youngren",
+          "SB": 19
         },
         {
           "player": "Barnett",
@@ -19038,7 +19052,8 @@
           "SLG": 1.062,
           "SAC": 1,
           "PA": 96,
-          "playerId": "spencer-manjarrez"
+          "playerId": "spencer-manjarrez",
+          "SB": 26
         },
         {
           "player": "Marshall",
@@ -19948,7 +19963,8 @@
           "SLG": 0.575,
           "SAC": 1,
           "PA": 99,
-          "playerId": "spencer-manjarrez"
+          "playerId": "spencer-manjarrez",
+          "SB": 16
         },
         {
           "player": "Nelson",
