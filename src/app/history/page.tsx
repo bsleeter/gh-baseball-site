@@ -5,9 +5,11 @@ import { useMemo, useState } from "react";
 import {
   getAllSeasons,
   BBCOR_ERA_START,
+  LATEST_YEAR,
   type Season,
   type Era,
 } from "@/data/programHistory";
+import { useGames } from "@/lib/hooks";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader, { EditorialDivider } from "@/components/SectionHeader";
 
@@ -16,6 +18,22 @@ type Filter = "all" | "bbcor" | "pre-bbcor";
 export default function HistoryPage() {
   const [filter, setFilter] = useState<Filter>("all");
   const all = useMemo(() => getAllSeasons(), []);
+
+  // Live W-L for the active season — used to override the static record
+  // on the active YearCard so the listing matches the schedule.
+  const { data: varsityGames } = useGames("varsity");
+  const liveActiveRecord = useMemo<{ W: number; L: number } | null>(() => {
+    if (!varsityGames) return null;
+    let w = 0;
+    let l = 0;
+    for (const g of varsityGames) {
+      if (g.type !== "game") continue;
+      if (!g.date.startsWith(`${LATEST_YEAR}-`)) continue;
+      if (g.result === "W") w += 1;
+      else if (g.result === "L") l += 1;
+    }
+    return w + l > 0 ? { W: w, L: l } : null;
+  }, [varsityGames]);
 
   const filtered = useMemo(() => {
     if (filter === "all") return [...all].reverse();
@@ -169,7 +187,11 @@ export default function HistoryPage() {
         />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {filtered.map((s) => (
-            <YearCard key={s.year} season={s} />
+            <YearCard
+              key={s.year}
+              season={s}
+              liveRecord={s.year === LATEST_YEAR ? liveActiveRecord : null}
+            />
           ))}
         </div>
       </div>
@@ -233,9 +255,19 @@ function honorsFor(season: Season): Honor[] {
   return out;
 }
 
-function YearCard({ season }: { season: Season }) {
-  const recordStr = season.record
-    ? `${season.record.W}–${season.record.L}`
+function YearCard({
+  season,
+  liveRecord,
+}: {
+  season: Season;
+  /** Live-computed record — only set for the active season. Overrides the
+   *  static `season.record` so the year card stays in sync with the
+   *  schedule on /schedule and the live header on /history/[year]. */
+  liveRecord?: { W: number; L: number } | null;
+}) {
+  const displayRecord = liveRecord ?? season.record;
+  const recordStr = displayRecord
+    ? `${displayRecord.W}–${displayRecord.L}`
     : "—";
 
   const honors = honorsFor(season);
@@ -262,7 +294,7 @@ function YearCard({ season }: { season: Season }) {
           <span className="font-display text-lg text-navy/80 tabular-nums">
             {recordStr}
           </span>
-          {season.record && (
+          {displayRecord && (
             <span className="font-heading text-[9px] uppercase tracking-[0.2em] text-navy/45">
               W–L
             </span>
