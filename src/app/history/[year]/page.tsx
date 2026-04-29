@@ -7,9 +7,11 @@ import {
   buildSeasonHallOfFame,
   formatRatio,
   formatERA,
+  LATEST_YEAR,
   type Season,
 } from "@/data/programHistory";
 import LiveSchedule from "./LiveSchedule";
+import LiveSeasonHeader from "./LiveSeasonHeader";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader, { EditorialDivider } from "@/components/SectionHeader";
 import { BattingTable, PitchingTable } from "./StatTables";
@@ -61,7 +63,22 @@ export default async function YearPage({
   const hofPitching = hof.filter((h) => h.group === "pitching");
   const hofOther = hof.filter((h) => h.group === "other");
 
-  // Header stats
+  // Header stats. For the active season the W–L is computed live in
+  // <LiveSeasonHeader/>; for older years it ships in the static stats array.
+  const isActiveSeason = season.year === LATEST_YEAR;
+  const otherStats: { value: string | number; label: string }[] = [];
+  if (season.teamBatting?.AVG !== undefined) {
+    otherStats.push({
+      value: formatRatio(season.teamBatting.AVG),
+      label: "Team AVG",
+    });
+  }
+  if (season.teamPitching?.ERA !== undefined) {
+    otherStats.push({
+      value: formatERA(season.teamPitching.ERA),
+      label: "Team ERA",
+    });
+  }
   const headerStats: { value: string | number; label: string }[] = [];
   if (season.record) {
     headerStats.push({
@@ -69,18 +86,7 @@ export default async function YearPage({
       label: "W–L",
     });
   }
-  if (season.teamBatting?.AVG !== undefined) {
-    headerStats.push({
-      value: formatRatio(season.teamBatting.AVG),
-      label: "Team AVG",
-    });
-  }
-  if (season.teamPitching?.ERA !== undefined) {
-    headerStats.push({
-      value: formatERA(season.teamPitching.ERA),
-      label: "Team ERA",
-    });
-  }
+  for (const s of otherStats) headerStats.push(s);
 
   const titles: string[] = [];
   if (season.stateChamp) titles.push("State Champions");
@@ -89,62 +95,80 @@ export default async function YearPage({
     titles.push(season.statePlace === 2 ? "2nd at State" : "3rd at State");
   if (season.leagueChamp) titles.push("League Champions");
 
+  const subtitle = (
+    <div className="flex flex-wrap gap-x-6 gap-y-1 items-baseline">
+      {season.league && (
+        <span
+          className="text-white/60 leading-snug"
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontStyle: "italic",
+            fontSize: "1.05rem",
+          }}
+        >
+          {season.league}
+        </span>
+      )}
+      {season.headCoach && (
+        <span className="font-heading text-[10px] uppercase tracking-[0.22em] text-white/55">
+          Head Coach:{" "}
+          <span className="text-carolina-light">{season.headCoach}</span>
+        </span>
+      )}
+      {(() => {
+        const assistants = season.coaches.filter(
+          (c) =>
+            !season.headCoach ||
+            normalize(c) !== normalize(season.headCoach),
+        );
+        return assistants.length > 0 ? (
+          <span className="font-heading text-[10px] uppercase tracking-[0.22em] text-white/40">
+            Assistants: {assistants.join(" · ")}
+          </span>
+        ) : null;
+      })()}
+    </div>
+  );
+  const titlesBlock = titles.length > 0 ? (
+    <div className="flex flex-wrap items-center gap-2">
+      {titles.map((t) => (
+        <span
+          key={t}
+          className="px-2.5 py-1 rounded-full text-[10px] font-heading font-bold uppercase tracking-[0.18em] bg-amber-300/20 border border-amber-300/40 text-amber-200"
+        >
+          ★ {t}
+        </span>
+      ))}
+    </div>
+  ) : null;
+
   return (
     <main className="bg-cream min-h-screen pb-24">
-      <PageHeader
-        kicker={`Season ${season.year} · ${
-          season.era === "bbcor" ? "BBCOR Era" : "Pre-BBCOR Era"
-        }`}
-        title={String(season.year)}
-        subtitle={
-          <div className="flex flex-wrap gap-x-6 gap-y-1 items-baseline">
-            {season.league && (
-              <span
-                className="text-white/60 leading-snug"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  fontSize: "1.05rem",
-                }}
-              >
-                {season.league}
-              </span>
-            )}
-            {season.headCoach && (
-              <span className="font-heading text-[10px] uppercase tracking-[0.22em] text-white/55">
-                Head Coach:{" "}
-                <span className="text-carolina-light">{season.headCoach}</span>
-              </span>
-            )}
-            {(() => {
-              const assistants = season.coaches.filter(
-                (c) =>
-                  !season.headCoach ||
-                  normalize(c) !== normalize(season.headCoach),
-              );
-              return assistants.length > 0 ? (
-                <span className="font-heading text-[10px] uppercase tracking-[0.22em] text-white/40">
-                  Assistants: {assistants.join(" · ")}
-                </span>
-              ) : null;
-            })()}
-          </div>
-        }
-        stats={headerStats}
-      >
-        {titles.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
-            {titles.map((t) => (
-              <span
-                key={t}
-                className="px-2.5 py-1 rounded-full text-[10px] font-heading font-bold uppercase tracking-[0.18em] bg-amber-300/20 border border-amber-300/40 text-amber-200"
-              >
-                ★ {t}
-              </span>
-            ))}
-          </div>
-        )}
-      </PageHeader>
+      {isActiveSeason ? (
+        <LiveSeasonHeader
+          year={season.year}
+          kicker={`Season ${season.year} · ${
+            season.era === "bbcor" ? "BBCOR Era" : "Pre-BBCOR Era"
+          }`}
+          title={String(season.year)}
+          subtitle={subtitle}
+          otherStats={otherStats}
+          fallbackRecord={season.record ?? null}
+        >
+          {titlesBlock}
+        </LiveSeasonHeader>
+      ) : (
+        <PageHeader
+          kicker={`Season ${season.year} · ${
+            season.era === "bbcor" ? "BBCOR Era" : "Pre-BBCOR Era"
+          }`}
+          title={String(season.year)}
+          subtitle={subtitle}
+          stats={headerStats}
+        >
+          {titlesBlock}
+        </PageHeader>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 space-y-14">
         <EditorialDivider label={`Season Record · ${season.year}`} />
