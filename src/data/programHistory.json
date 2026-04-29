@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-27T16:59:25.091616Z",
+    "generatedAt": "2026-04-29T16:07:52.246625Z",
     "bbcorEraStart": 2012,
     "yearsAvailable": [
       1990,
@@ -33,12 +33,14 @@
       2017,
       2018,
       2019,
+      2021,
+      2022,
       2023,
       2024,
       2025,
       2026
     ],
-    "playerCount": 295,
+    "playerCount": 315,
     "schemaVersion": 1
   },
   "seasons": {
@@ -29357,6 +29359,1766 @@
       "highlights": [],
       "sourceQuality": {}
     },
+    "2021": {
+      "year": 2021,
+      "era": "bbcor",
+      "league": "3A SSC",
+      "leagueChamp": true,
+      "districtChamp": false,
+      "stateChamp": false,
+      "statePlace": null,
+      "record": {
+        "W": 8,
+        "L": 2
+      },
+      "headCoach": "Pete Jansen",
+      "coaches": [],
+      "manager": null,
+      "roster": [
+        {
+          "num": null,
+          "player": "Colello",
+          "grade": null,
+          "playerId": "colello"
+        },
+        {
+          "num": null,
+          "player": "Cosmos",
+          "grade": null,
+          "playerId": "garrick-cosmos"
+        },
+        {
+          "num": null,
+          "player": "Flaherty",
+          "grade": null,
+          "playerId": "flaherty"
+        },
+        {
+          "num": null,
+          "player": "Hento",
+          "grade": null,
+          "playerId": "drew-hento"
+        },
+        {
+          "num": null,
+          "player": "Hodges",
+          "grade": null,
+          "playerId": "hodges"
+        },
+        {
+          "num": null,
+          "player": "Holum",
+          "grade": null,
+          "playerId": "justin-holum"
+        },
+        {
+          "num": null,
+          "player": "Jones",
+          "grade": null,
+          "playerId": "jones"
+        },
+        {
+          "num": null,
+          "player": "Knowles",
+          "grade": null,
+          "playerId": "knowles"
+        },
+        {
+          "num": null,
+          "player": "Lundberg",
+          "grade": null,
+          "playerId": "lundberg"
+        },
+        {
+          "num": null,
+          "player": "McLellan",
+          "grade": null,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "num": null,
+          "player": "Miller",
+          "grade": null,
+          "playerId": "luke-miller"
+        },
+        {
+          "num": null,
+          "player": "Peterson",
+          "grade": null,
+          "playerId": "cutter-peterson"
+        },
+        {
+          "num": null,
+          "player": "Reed",
+          "grade": null,
+          "playerId": "reed"
+        },
+        {
+          "num": null,
+          "player": "Toglia",
+          "grade": null,
+          "playerId": "toglia"
+        },
+        {
+          "num": null,
+          "player": "Voves",
+          "grade": null,
+          "playerId": "ryan-voves"
+        },
+        {
+          "num": null,
+          "player": "Vorpahl",
+          "grade": null,
+          "playerId": "ryan-vorpahl"
+        }
+      ],
+      "schedule": [
+        {
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "2-1"
+        },
+        {
+          "opponent": "Curtis",
+          "w_l": "W",
+          "score": "4-1"
+        },
+        {
+          "opponent": "South Kitsap",
+          "w_l": "L",
+          "score": "3-7"
+        },
+        {
+          "opponent": "Sumner",
+          "w_l": "L",
+          "score": "3-10"
+        },
+        {
+          "opponent": "Bellarmine",
+          "w_l": "W",
+          "score": "9-2"
+        },
+        {
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "7-5"
+        },
+        {
+          "opponent": "Bellarmine",
+          "w_l": "W",
+          "score": "10-1"
+        },
+        {
+          "opponent": "Curtis",
+          "w_l": "W",
+          "score": "14-0"
+        },
+        {
+          "opponent": "Sumner",
+          "w_l": "W",
+          "score": "4-3"
+        },
+        {
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "3-1"
+        }
+      ],
+      "battingLines": [
+        {
+          "player": "Colello",
+          "AB": 17,
+          "R": 5,
+          "H": 4,
+          "1B": 3,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 3,
+          "BB": 4,
+          "HBP": 0,
+          "K": 4,
+          "SAC": 0,
+          "TB": 6,
+          "SB": 0,
+          "AVG": 0.235,
+          "OBP": 0.381,
+          "SLG": 0.353,
+          "PA": 21,
+          "playerId": "colello"
+        },
+        {
+          "player": "Cosmos",
+          "AB": 1,
+          "R": 0,
+          "H": 0,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 0,
+          "HBP": 0,
+          "K": 0,
+          "SAC": 0,
+          "TB": 0,
+          "SB": 0,
+          "AVG": 0,
+          "OBP": 0,
+          "SLG": 0,
+          "PA": 1,
+          "playerId": "garrick-cosmos"
+        },
+        {
+          "player": "Flaherty",
+          "AB": 4,
+          "R": 0,
+          "H": 0,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 1,
+          "HBP": 0,
+          "K": 2,
+          "SAC": 0,
+          "TB": 0,
+          "SB": 0,
+          "AVG": 0,
+          "OBP": 0.2,
+          "SLG": 0,
+          "PA": 5,
+          "playerId": "flaherty"
+        },
+        {
+          "player": "Hento",
+          "AB": 2,
+          "R": 2,
+          "H": 1,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 0,
+          "HBP": 0,
+          "K": 1,
+          "SAC": 0,
+          "TB": 1,
+          "SB": 2,
+          "AVG": 0.5,
+          "OBP": 0.5,
+          "SLG": 0.5,
+          "PA": 2,
+          "playerId": "drew-hento"
+        },
+        {
+          "player": "Hodges",
+          "AB": 17,
+          "R": 5,
+          "H": 6,
+          "1B": 4,
+          "2B": 2,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 4,
+          "BB": 5,
+          "HBP": 4,
+          "K": 1,
+          "SAC": 1,
+          "TB": 8,
+          "SB": 0,
+          "AVG": 0.353,
+          "OBP": 0.577,
+          "SLG": 0.471,
+          "PA": 27,
+          "playerId": "hodges"
+        },
+        {
+          "player": "Holum",
+          "AB": 9,
+          "R": 1,
+          "H": 2,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 1,
+          "HBP": 0,
+          "K": 3,
+          "SAC": 0,
+          "TB": 2,
+          "SB": 0,
+          "AVG": 0.222,
+          "OBP": 0.3,
+          "SLG": 0.222,
+          "PA": 10,
+          "playerId": "justin-holum"
+        },
+        {
+          "player": "Jones",
+          "AB": 31,
+          "R": 11,
+          "H": 10,
+          "1B": 9,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 6,
+          "BB": 3,
+          "HBP": 2,
+          "K": 8,
+          "SAC": 0,
+          "TB": 11,
+          "SB": 8,
+          "AVG": 0.323,
+          "OBP": 0.417,
+          "SLG": 0.355,
+          "PA": 36,
+          "playerId": "jones"
+        },
+        {
+          "player": "Knowles",
+          "AB": 19,
+          "R": 2,
+          "H": 6,
+          "1B": 5,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 6,
+          "BB": 4,
+          "HBP": 1,
+          "K": 4,
+          "SAC": 0,
+          "TB": 7,
+          "SB": 0,
+          "AVG": 0.316,
+          "OBP": 0.435,
+          "SLG": 0.368,
+          "PA": 24,
+          "playerId": "knowles"
+        },
+        {
+          "player": "Lundberg",
+          "AB": 25,
+          "R": 9,
+          "H": 4,
+          "1B": 3,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 1,
+          "BB": 9,
+          "HBP": 1,
+          "K": 8,
+          "SAC": 0,
+          "TB": 5,
+          "SB": 5,
+          "AVG": 0.16,
+          "OBP": 0.4,
+          "SLG": 0.2,
+          "PA": 35,
+          "playerId": "lundberg"
+        },
+        {
+          "player": "McLellan",
+          "AB": 11,
+          "R": 1,
+          "H": 2,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 2,
+          "BB": 1,
+          "HBP": 0,
+          "K": 2,
+          "SAC": 0,
+          "TB": 2,
+          "SB": 1,
+          "AVG": 0.182,
+          "OBP": 0.25,
+          "SLG": 0.182,
+          "PA": 12,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "player": "Miller",
+          "AB": 8,
+          "R": 0,
+          "H": 0,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 2,
+          "HBP": 0,
+          "K": 7,
+          "SAC": 0,
+          "TB": 0,
+          "SB": 0,
+          "AVG": 0,
+          "OBP": 0.2,
+          "SLG": 0,
+          "PA": 10,
+          "playerId": "luke-miller"
+        },
+        {
+          "player": "Peterson",
+          "AB": 33,
+          "R": 5,
+          "H": 8,
+          "1B": 6,
+          "2B": 2,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 11,
+          "BB": 2,
+          "HBP": 1,
+          "K": 3,
+          "SAC": 0,
+          "TB": 10,
+          "SB": 2,
+          "AVG": 0.242,
+          "OBP": 0.286,
+          "SLG": 0.303,
+          "PA": 36,
+          "playerId": "cutter-peterson"
+        },
+        {
+          "player": "Reed",
+          "AB": 25,
+          "R": 4,
+          "H": 4,
+          "1B": 3,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 3,
+          "BB": 1,
+          "HBP": 1,
+          "K": 8,
+          "SAC": 1,
+          "TB": 5,
+          "SB": 0,
+          "AVG": 0.16,
+          "OBP": 0.222,
+          "SLG": 0.2,
+          "PA": 28,
+          "playerId": "reed"
+        },
+        {
+          "player": "Toglia",
+          "AB": 30,
+          "R": 10,
+          "H": 14,
+          "1B": 9,
+          "2B": 4,
+          "3B": 0,
+          "HR": 1,
+          "RBI": 13,
+          "BB": 5,
+          "HBP": 1,
+          "K": 4,
+          "SAC": 0,
+          "TB": 21,
+          "SB": 0,
+          "AVG": 0.467,
+          "OBP": 0.556,
+          "SLG": 0.7,
+          "PA": 36,
+          "playerId": "toglia"
+        },
+        {
+          "player": "Voves",
+          "AB": 26,
+          "R": 4,
+          "H": 8,
+          "1B": 7,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 5,
+          "BB": 0,
+          "HBP": 0,
+          "K": 5,
+          "SAC": 2,
+          "TB": 10,
+          "SB": 0,
+          "AVG": 0.308,
+          "OBP": 0.308,
+          "SLG": 0.385,
+          "PA": 28,
+          "playerId": "ryan-voves"
+        }
+      ],
+      "pitchingLines": [
+        {
+          "player": "Colello",
+          "W": 1,
+          "L": 0,
+          "SV": 0,
+          "BF": 23,
+          "R": 4,
+          "H": 7,
+          "ER": 4,
+          "BB": 4,
+          "K": 4,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "5",
+          "IP": 5.0,
+          "ERA": 5.6,
+          "WHIP": 2.2,
+          "K7": 5.6,
+          "KBB": 1.0,
+          "playerId": "colello"
+        },
+        {
+          "player": "Cosmos",
+          "W": 1,
+          "L": 0,
+          "SV": 0,
+          "BF": 14,
+          "R": 4,
+          "H": 4,
+          "ER": 3,
+          "BB": 1,
+          "K": 5,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "3",
+          "IP": 3.0,
+          "ERA": 7,
+          "WHIP": 1.6667,
+          "K7": 11.6667,
+          "KBB": 5.0,
+          "playerId": "garrick-cosmos"
+        },
+        {
+          "player": "Flaherty",
+          "W": 3,
+          "L": 0,
+          "SV": 0,
+          "BF": 76,
+          "R": 5,
+          "H": 11,
+          "ER": 5,
+          "BB": 5,
+          "K": 10,
+          "HBP": 1,
+          "HR": 0,
+          "IPDisplay": "19.1",
+          "IP": 19.3333,
+          "ERA": 1.81,
+          "WHIP": 0.8276,
+          "K7": 3.6207,
+          "KBB": 2.0,
+          "playerId": "flaherty"
+        },
+        {
+          "player": "Hento",
+          "W": 1,
+          "L": 1,
+          "SV": 0,
+          "BF": 19,
+          "R": 4,
+          "H": 4,
+          "ER": 3,
+          "BB": 2,
+          "K": 4,
+          "HBP": 2,
+          "HR": 0,
+          "IPDisplay": "4",
+          "IP": 4.0,
+          "ERA": 5.25,
+          "WHIP": 1.5,
+          "K7": 7.0,
+          "KBB": 2.0,
+          "playerId": "drew-hento"
+        },
+        {
+          "player": "Hodges",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 3,
+          "R": 0,
+          "H": 0,
+          "ER": 0,
+          "BB": 0,
+          "K": 0,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "1",
+          "IP": 1.0,
+          "ERA": 0,
+          "WHIP": 0.0,
+          "K7": 0.0,
+          "playerId": "hodges"
+        },
+        {
+          "player": "Holum",
+          "W": 0,
+          "L": 0,
+          "SV": 3,
+          "BF": 27,
+          "R": 2,
+          "H": 4,
+          "ER": 2,
+          "BB": 2,
+          "K": 4,
+          "HBP": 2,
+          "HR": 0,
+          "IPDisplay": "6.2",
+          "IP": 6.6667,
+          "ERA": 2.1,
+          "WHIP": 0.9,
+          "K7": 4.2,
+          "KBB": 2.0,
+          "playerId": "justin-holum"
+        },
+        {
+          "player": "Lundberg",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 4,
+          "R": 1,
+          "H": 0,
+          "ER": 0,
+          "BB": 1,
+          "K": 0,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "1",
+          "IP": 1.0,
+          "ERA": 0,
+          "WHIP": 1.0,
+          "K7": 0.0,
+          "KBB": 0.0,
+          "playerId": "lundberg"
+        },
+        {
+          "player": "McLellan",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 4,
+          "R": 0,
+          "H": 0,
+          "ER": 0,
+          "BB": 0,
+          "K": 1,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "1",
+          "IP": 1.0,
+          "ERA": 0,
+          "WHIP": 0.0,
+          "K7": 7.0,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "player": "Miller",
+          "W": 1,
+          "L": 1,
+          "SV": 1,
+          "BF": 63,
+          "R": 8,
+          "H": 17,
+          "ER": 7,
+          "BB": 4,
+          "K": 10,
+          "HBP": 3,
+          "HR": 0,
+          "IPDisplay": "13.1",
+          "IP": 13.3333,
+          "ERA": 3.675,
+          "WHIP": 1.575,
+          "K7": 5.25,
+          "KBB": 2.5,
+          "playerId": "luke-miller"
+        },
+        {
+          "player": "Vorpahl",
+          "W": 2,
+          "L": 0,
+          "SV": 0,
+          "BF": 43,
+          "R": 3,
+          "H": 10,
+          "ER": 3,
+          "BB": 3,
+          "K": 6,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "10.2",
+          "IP": 10.6667,
+          "ERA": 1.968,
+          "WHIP": 1.2187,
+          "K7": 3.9375,
+          "KBB": 2.0,
+          "playerId": "ryan-vorpahl"
+        },
+        {
+          "player": "Voves",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 7,
+          "R": 1,
+          "H": 1,
+          "ER": 1,
+          "BB": 2,
+          "K": 3,
+          "HBP": 1,
+          "HR": 0,
+          "IPDisplay": "1",
+          "IP": 1.0,
+          "ERA": 7,
+          "WHIP": 3.0,
+          "K7": 21.0,
+          "KBB": 1.5,
+          "playerId": "ryan-voves"
+        }
+      ],
+      "teamBatting": {
+        "player": "TEAM",
+        "AB": 258,
+        "R": 59,
+        "H": 69,
+        "1B": 54,
+        "2B": 12,
+        "3B": 2,
+        "HR": 1,
+        "RBI": 53,
+        "BB": 39,
+        "HBP": 9,
+        "K": 61,
+        "SAC": 7,
+        "TB": 88,
+        "SB": 18,
+        "AVG": 0.267,
+        "OBP": 0.382,
+        "SLG": 0.341,
+        "PA": 313
+      },
+      "teamPitching": {
+        "player": "TEAM",
+        "W": 8,
+        "L": 2,
+        "SV": 5,
+        "BF": 283,
+        "R": 31,
+        "H": 59,
+        "ER": 28,
+        "BB": 24,
+        "K": 46,
+        "HBP": 6,
+        "HR": 3,
+        "IPDisplay": "66",
+        "IP": 66.0,
+        "ERA": 2.97,
+        "WHIP": 1.2576,
+        "K7": 4.8788,
+        "KBB": 1.9167
+      },
+      "individualRecords": [],
+      "highlights": [],
+      "sourceQuality": {}
+    },
+    "2022": {
+      "year": 2022,
+      "era": "bbcor",
+      "league": "3A SSC",
+      "leagueChamp": false,
+      "districtChamp": false,
+      "stateChamp": false,
+      "statePlace": null,
+      "record": {
+        "W": 13,
+        "L": 13
+      },
+      "headCoach": "Pete Jansen",
+      "coaches": [],
+      "manager": null,
+      "roster": [
+        {
+          "num": null,
+          "player": "Alex Vela",
+          "grade": 11,
+          "playerId": "alex-vela"
+        },
+        {
+          "num": null,
+          "player": "Brady Altman",
+          "grade": 11,
+          "playerId": "brady-altman"
+        },
+        {
+          "num": null,
+          "player": "Sam Barber",
+          "grade": 11,
+          "playerId": "sam-barber"
+        },
+        {
+          "num": null,
+          "player": "Justin Holum",
+          "grade": 12,
+          "playerId": "justin-holum"
+        },
+        {
+          "num": null,
+          "player": "JD Dunham",
+          "grade": 10,
+          "playerId": "jd-dunham"
+        },
+        {
+          "num": null,
+          "player": "Sam Haddon",
+          "grade": 11,
+          "playerId": "sam-haddon"
+        },
+        {
+          "num": null,
+          "player": "Ryland Heckman",
+          "grade": 10,
+          "playerId": "ryland-heckman"
+        },
+        {
+          "num": null,
+          "player": "Trevor Hellwich",
+          "grade": 12,
+          "playerId": "trevor-hellwich"
+        },
+        {
+          "num": null,
+          "player": "Nolan Howard",
+          "grade": 12,
+          "playerId": "nolan-howard"
+        },
+        {
+          "num": null,
+          "player": "Lopes",
+          "grade": null,
+          "playerId": "lopes"
+        },
+        {
+          "num": null,
+          "player": "Kaden Marler",
+          "grade": 11,
+          "playerId": "kaden-marler"
+        },
+        {
+          "num": null,
+          "player": "Jack McLellan",
+          "grade": 12,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "num": null,
+          "player": "Luke Miller",
+          "grade": 12,
+          "playerId": "luke-miller"
+        },
+        {
+          "num": null,
+          "player": "Will Payne",
+          "grade": 12,
+          "playerId": "will-payne"
+        },
+        {
+          "num": null,
+          "player": "Cutter Peterson",
+          "grade": 10,
+          "playerId": "cutter-peterson"
+        },
+        {
+          "num": null,
+          "player": "Chase Pringle",
+          "grade": 11,
+          "playerId": "chase-pringle"
+        },
+        {
+          "num": null,
+          "player": "Wriley Schreiner",
+          "grade": 11,
+          "playerId": "wriley-schreiner"
+        },
+        {
+          "num": null,
+          "player": "Krilich",
+          "grade": null,
+          "playerId": "cole-krilich"
+        },
+        {
+          "num": null,
+          "player": "Garrick Cosmos",
+          "grade": 11,
+          "playerId": "garrick-cosmos"
+        },
+        {
+          "num": null,
+          "player": "Drew Hento",
+          "grade": 12,
+          "playerId": "drew-hento"
+        },
+        {
+          "num": null,
+          "player": "Brendan Masini",
+          "grade": 11,
+          "playerId": "brendan-masini"
+        },
+        {
+          "num": null,
+          "player": "Ryan Vorpahl",
+          "grade": 11,
+          "playerId": "ryan-vorpahl"
+        },
+        {
+          "num": null,
+          "player": "Westfall",
+          "grade": null,
+          "playerId": "riley-westfall"
+        }
+      ],
+      "schedule": [
+        {
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "7-5",
+          "notes": "Timberline Tournament"
+        },
+        {
+          "opponent": "North Thurston",
+          "w_l": "L",
+          "score": "5-8",
+          "notes": "Timberline Tournament"
+        },
+        {
+          "opponent": "River Ridge",
+          "w_l": "L",
+          "score": "3-4",
+          "notes": "Yelm Tournament"
+        },
+        {
+          "opponent": "River Ridge",
+          "w_l": "W",
+          "score": "8-2",
+          "notes": "Yelm Tournament"
+        },
+        {
+          "opponent": "Yelm",
+          "w_l": "W",
+          "score": "10-2"
+        },
+        {
+          "opponent": "Yelm",
+          "w_l": "L",
+          "score": "1-2"
+        },
+        {
+          "opponent": "Timberline",
+          "w_l": "W",
+          "score": "7-6"
+        },
+        {
+          "opponent": "Bonney Lake",
+          "w_l": "L",
+          "score": "1-8"
+        },
+        {
+          "opponent": "North Thurston",
+          "w_l": "W",
+          "score": "3-2"
+        },
+        {
+          "opponent": "Timberline",
+          "w_l": "W",
+          "score": "9-3"
+        },
+        {
+          "opponent": "Capital",
+          "w_l": "W",
+          "score": "10-4"
+        },
+        {
+          "opponent": "Capital",
+          "w_l": "L",
+          "score": "5-15"
+        },
+        {
+          "opponent": "Central Kitsap",
+          "w_l": "L",
+          "score": "2-3"
+        },
+        {
+          "opponent": "Central Kitsap",
+          "w_l": "W",
+          "score": "23-8"
+        },
+        {
+          "opponent": "Peninsula",
+          "w_l": "W",
+          "score": "8-6"
+        },
+        {
+          "opponent": "Peninsula",
+          "w_l": "L",
+          "score": "4-11"
+        },
+        {
+          "opponent": "Auburn Riverside",
+          "w_l": "W",
+          "score": "11-1"
+        },
+        {
+          "opponent": "Rogers",
+          "w_l": "L",
+          "score": "5-15"
+        },
+        {
+          "opponent": "Curtis",
+          "w_l": "W",
+          "score": "12-2"
+        },
+        {
+          "opponent": "West Seattle",
+          "w_l": "L",
+          "score": "4-5"
+        },
+        {
+          "opponent": "Silas",
+          "w_l": "W",
+          "score": "10-6"
+        },
+        {
+          "opponent": "Port Angeles",
+          "w_l": "W",
+          "score": "6-4"
+        },
+        {
+          "opponent": "North Kitsap",
+          "w_l": "L",
+          "score": "3-4"
+        },
+        {
+          "opponent": "Olympia",
+          "w_l": "L",
+          "score": "4-8"
+        },
+        {
+          "opponent": "Auburn",
+          "w_l": "L",
+          "score": "4-7"
+        },
+        {
+          "opponent": "Edmonds-Woodway",
+          "w_l": "L",
+          "score": "1-2"
+        }
+      ],
+      "battingLines": [
+        {
+          "player": "Alex Vela",
+          "AB": 7,
+          "R": 1,
+          "H": 1,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 1,
+          "BB": 0,
+          "HBP": 1,
+          "K": 1,
+          "SAC": 0,
+          "TB": 1,
+          "SB": 0,
+          "AVG": 0.143,
+          "OBP": 0.25,
+          "SLG": 0.143,
+          "PA": 8,
+          "playerId": "alex-vela"
+        },
+        {
+          "player": "Brady Altman",
+          "AB": 79,
+          "R": 33,
+          "H": 31,
+          "1B": 22,
+          "2B": 5,
+          "3B": 0,
+          "HR": 4,
+          "RBI": 24,
+          "BB": 17,
+          "HBP": 1,
+          "K": 13,
+          "SAC": 2,
+          "TB": 44,
+          "SB": 13,
+          "AVG": 0.392,
+          "OBP": 0.505,
+          "SLG": 0.557,
+          "PA": 99,
+          "playerId": "brady-altman"
+        },
+        {
+          "player": "Sam Barber",
+          "AB": 11,
+          "R": 1,
+          "H": 2,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 3,
+          "BB": 3,
+          "HBP": 0,
+          "K": 2,
+          "SAC": 0,
+          "TB": 2,
+          "SB": 1,
+          "AVG": 0.182,
+          "OBP": 0.357,
+          "SLG": 0.182,
+          "PA": 14,
+          "playerId": "sam-barber"
+        },
+        {
+          "player": "Justin Holum",
+          "AB": 62,
+          "R": 24,
+          "H": 18,
+          "1B": 14,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 10,
+          "BB": 10,
+          "HBP": 6,
+          "K": 11,
+          "SAC": 1,
+          "TB": 22,
+          "SB": 17,
+          "AVG": 0.29,
+          "OBP": 0.436,
+          "SLG": 0.355,
+          "PA": 79,
+          "playerId": "justin-holum"
+        },
+        {
+          "player": "JD Dunham",
+          "AB": 66,
+          "R": 20,
+          "H": 21,
+          "1B": 15,
+          "2B": 5,
+          "3B": 0,
+          "HR": 1,
+          "RBI": 12,
+          "BB": 6,
+          "HBP": 3,
+          "K": 14,
+          "SAC": 0,
+          "TB": 28,
+          "SB": 3,
+          "AVG": 0.318,
+          "OBP": 0.4,
+          "SLG": 0.424,
+          "PA": 75,
+          "playerId": "jd-dunham"
+        },
+        {
+          "player": "Sam Haddon",
+          "AB": 18,
+          "R": 5,
+          "H": 3,
+          "1B": 1,
+          "2B": 2,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 2,
+          "BB": 4,
+          "HBP": 2,
+          "K": 9,
+          "SAC": 3,
+          "TB": 5,
+          "SB": 0,
+          "AVG": 0.167,
+          "OBP": 0.375,
+          "SLG": 0.278,
+          "PA": 27,
+          "playerId": "sam-haddon"
+        },
+        {
+          "player": "Ryland Heckman",
+          "AB": 44,
+          "R": 10,
+          "H": 17,
+          "1B": 9,
+          "2B": 5,
+          "3B": 1,
+          "HR": 1,
+          "RBI": 8,
+          "BB": 6,
+          "HBP": 1,
+          "K": 7,
+          "SAC": 0,
+          "TB": 26,
+          "SB": 2,
+          "AVG": 0.386,
+          "OBP": 0.471,
+          "SLG": 0.591,
+          "PA": 51,
+          "playerId": "ryland-heckman"
+        },
+        {
+          "player": "Trevor Hellwich",
+          "AB": 49,
+          "R": 6,
+          "H": 13,
+          "1B": 12,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 10,
+          "BB": 5,
+          "HBP": 2,
+          "K": 7,
+          "SAC": 1,
+          "TB": 14,
+          "SB": 5,
+          "AVG": 0.265,
+          "OBP": 0.357,
+          "SLG": 0.286,
+          "PA": 57,
+          "playerId": "trevor-hellwich"
+        },
+        {
+          "player": "Nolan Howard",
+          "AB": 9,
+          "R": 1,
+          "H": 1,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 1,
+          "BB": 3,
+          "HBP": 1,
+          "K": 4,
+          "SAC": 0,
+          "TB": 1,
+          "SB": 0,
+          "AVG": 0.111,
+          "OBP": 0.385,
+          "SLG": 0.111,
+          "PA": 13,
+          "playerId": "nolan-howard"
+        },
+        {
+          "player": "Lopes",
+          "AB": 13,
+          "R": 3,
+          "H": 2,
+          "1B": 1,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 3,
+          "BB": 2,
+          "HBP": 0,
+          "K": 0,
+          "SAC": 1,
+          "TB": 3,
+          "SB": 1,
+          "AVG": 0.154,
+          "OBP": 0.267,
+          "SLG": 0.231,
+          "PA": 16,
+          "playerId": "lopes"
+        },
+        {
+          "player": "Kaden Marler",
+          "AB": 45,
+          "R": 10,
+          "H": 10,
+          "1B": 9,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 9,
+          "BB": 11,
+          "HBP": 1,
+          "K": 17,
+          "SAC": 0,
+          "TB": 9,
+          "SB": 6,
+          "AVG": 0.222,
+          "OBP": 0.386,
+          "SLG": 0.2,
+          "PA": 57,
+          "playerId": "kaden-marler"
+        },
+        {
+          "player": "Jack McLellan",
+          "AB": 65,
+          "R": 11,
+          "H": 19,
+          "1B": 14,
+          "2B": 4,
+          "3B": 1,
+          "HR": 0,
+          "RBI": 19,
+          "BB": 7,
+          "HBP": 1,
+          "K": 14,
+          "SAC": 1,
+          "TB": 29,
+          "SB": 0,
+          "AVG": 0.292,
+          "OBP": 0.37,
+          "SLG": 0.446,
+          "PA": 74,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "player": "Luke Miller",
+          "AB": 15,
+          "R": 7,
+          "H": 1,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 7,
+          "HBP": 0,
+          "K": 5,
+          "SAC": 0,
+          "TB": 1,
+          "SB": 0,
+          "AVG": 0.067,
+          "OBP": 0.364,
+          "SLG": 0.067,
+          "PA": 22,
+          "playerId": "luke-miller"
+        },
+        {
+          "player": "Will Payne",
+          "AB": 23,
+          "R": 3,
+          "H": 4,
+          "1B": 2,
+          "2B": 2,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 4,
+          "BB": 2,
+          "HBP": 0,
+          "K": 6,
+          "SAC": 0,
+          "TB": 6,
+          "SB": 0,
+          "AVG": 0.174,
+          "OBP": 0.24,
+          "SLG": 0.261,
+          "PA": 25,
+          "playerId": "will-payne"
+        },
+        {
+          "player": "Cutter Peterson",
+          "AB": 30,
+          "R": 5,
+          "H": 6,
+          "1B": 4,
+          "2B": 2,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 5,
+          "BB": 7,
+          "HBP": 2,
+          "K": 6,
+          "SAC": 2,
+          "TB": 8,
+          "SB": 3,
+          "AVG": 0.2,
+          "OBP": 0.385,
+          "SLG": 0.267,
+          "PA": 41,
+          "playerId": "cutter-peterson"
+        },
+        {
+          "player": "Chase Pringle",
+          "AB": 46,
+          "R": 13,
+          "H": 11,
+          "1B": 9,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 8,
+          "BB": 11,
+          "HBP": 0,
+          "K": 15,
+          "SAC": 1,
+          "TB": 11,
+          "SB": 4,
+          "AVG": 0.239,
+          "OBP": 0.386,
+          "SLG": 0.239,
+          "PA": 58,
+          "playerId": "chase-pringle"
+        },
+        {
+          "player": "Wriley Schreiner",
+          "AB": 55,
+          "R": 13,
+          "H": 19,
+          "1B": 15,
+          "2B": 3,
+          "3B": 0,
+          "HR": 1,
+          "RBI": 18,
+          "BB": 6,
+          "HBP": 5,
+          "K": 10,
+          "SAC": 3,
+          "TB": 22,
+          "SB": 2,
+          "AVG": 0.345,
+          "OBP": 0.455,
+          "SLG": 0.4,
+          "PA": 69,
+          "playerId": "wriley-schreiner"
+        },
+        {
+          "player": "Krilich",
+          "AB": 2,
+          "R": 0,
+          "H": 1,
+          "1B": 0,
+          "2B": 1,
+          "3B": 0,
+          "HR": 0,
+          "RBI": 0,
+          "BB": 0,
+          "HBP": 0,
+          "K": 1,
+          "SAC": 0,
+          "TB": 2,
+          "SB": 0,
+          "AVG": 0.5,
+          "OBP": 0.5,
+          "SLG": 0.5,
+          "PA": 2,
+          "playerId": "cole-krilich"
+        }
+      ],
+      "pitchingLines": [
+        {
+          "player": "Luke Miller",
+          "W": 1,
+          "L": 1,
+          "SV": 0,
+          "BF": 32,
+          "R": 5,
+          "H": 7,
+          "ER": 3,
+          "BB": 3,
+          "K": 7,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "6.1",
+          "IP": 6.3333,
+          "ERA": 3.443,
+          "WHIP": 1.579,
+          "K7": 7.7369,
+          "KBB": 2.3333,
+          "playerId": "luke-miller"
+        },
+        {
+          "player": "Jack McLellan",
+          "W": 0,
+          "L": 1,
+          "SV": 0,
+          "BF": 3,
+          "R": 2,
+          "H": 1,
+          "ER": 0,
+          "BB": 1,
+          "K": 1,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "0.1",
+          "IP": 0.3333,
+          "ERA": 0,
+          "WHIP": 6.0006,
+          "K7": 21.0021,
+          "KBB": 1.0,
+          "playerId": "jack-mclellan"
+        },
+        {
+          "player": "Sam Barber",
+          "W": 4,
+          "L": 0,
+          "SV": 0,
+          "BF": 113,
+          "R": 12,
+          "H": 23,
+          "ER": 12,
+          "BB": 13,
+          "K": 24,
+          "HBP": 2,
+          "HR": 0,
+          "IPDisplay": "23",
+          "IP": 23.0,
+          "ERA": 3.652,
+          "WHIP": 1.5652,
+          "K7": 7.3043,
+          "KBB": 1.8462,
+          "playerId": "sam-barber"
+        },
+        {
+          "player": "Garrick Cosmos",
+          "W": 4,
+          "L": 1,
+          "SV": 0,
+          "BF": 202,
+          "R": 30,
+          "H": 51,
+          "ER": 23,
+          "BB": 11,
+          "K": 46,
+          "HBP": 4,
+          "HR": 1,
+          "IPDisplay": "44.2",
+          "IP": 44.6667,
+          "ERA": 3.602,
+          "WHIP": 1.3881,
+          "K7": 7.2089,
+          "KBB": 4.1818,
+          "playerId": "garrick-cosmos"
+        },
+        {
+          "player": "Ryland Heckman",
+          "W": 2,
+          "L": 2,
+          "SV": 0,
+          "BF": 116,
+          "R": 16,
+          "H": 12,
+          "ER": 10,
+          "BB": 16,
+          "K": 19,
+          "HBP": 8,
+          "HR": 0,
+          "IPDisplay": "24.2",
+          "IP": 24.6667,
+          "ERA": 2.834,
+          "WHIP": 1.1351,
+          "K7": 5.3919,
+          "KBB": 1.1875,
+          "playerId": "ryland-heckman"
+        },
+        {
+          "player": "Drew Hento",
+          "W": 0,
+          "L": 1,
+          "SV": 0,
+          "BF": 121,
+          "R": 21,
+          "H": 26,
+          "ER": 9,
+          "BB": 8,
+          "K": 13,
+          "HBP": 5,
+          "HR": 0,
+          "IPDisplay": "22.1",
+          "IP": 22.3333,
+          "ERA": 2.825,
+          "WHIP": 1.5224,
+          "K7": 4.0746,
+          "KBB": 1.625,
+          "playerId": "drew-hento"
+        },
+        {
+          "player": "Justin Holum",
+          "W": 0,
+          "L": 0,
+          "SV": 1,
+          "BF": 6,
+          "R": 0,
+          "H": 1,
+          "ER": 0,
+          "BB": 1,
+          "K": 1,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "1.1",
+          "IP": 1.3333,
+          "ERA": 0,
+          "WHIP": 1.5,
+          "K7": 5.2501,
+          "KBB": 1.0,
+          "playerId": "justin-holum"
+        },
+        {
+          "player": "Brendan Masini",
+          "W": 2,
+          "L": 2,
+          "SV": 0,
+          "BF": 106,
+          "R": 19,
+          "H": 24,
+          "ER": 18,
+          "BB": 11,
+          "K": 23,
+          "HBP": 4,
+          "HR": 0,
+          "IPDisplay": "21.2",
+          "IP": 21.6667,
+          "ERA": 5.806,
+          "WHIP": 1.6154,
+          "K7": 7.4308,
+          "KBB": 2.0909,
+          "playerId": "brendan-masini"
+        },
+        {
+          "player": "Cutter Peterson",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 5,
+          "R": 1,
+          "H": 2,
+          "ER": 1,
+          "BB": 0,
+          "K": 0,
+          "HBP": 1,
+          "HR": 0,
+          "IPDisplay": "1",
+          "IP": 1.0,
+          "ERA": 7,
+          "WHIP": 2.0,
+          "K7": 0.0,
+          "playerId": "cutter-peterson"
+        },
+        {
+          "player": "Chase Pringle",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 36,
+          "R": 2,
+          "H": 8,
+          "ER": 1,
+          "BB": 3,
+          "K": 5,
+          "HBP": 0,
+          "HR": 0,
+          "IPDisplay": "7.2",
+          "IP": 7.6667,
+          "ERA": 0.909,
+          "WHIP": 1.4348,
+          "K7": 4.5652,
+          "KBB": 1.6667,
+          "playerId": "chase-pringle"
+        },
+        {
+          "player": "Ryan Vorpahl",
+          "W": 0,
+          "L": 5,
+          "SV": 1,
+          "BF": 83,
+          "R": 31,
+          "H": 25,
+          "ER": 23,
+          "BB": 17,
+          "K": 17,
+          "HBP": 12,
+          "HR": 0,
+          "IPDisplay": "15.1",
+          "IP": 15.3333,
+          "ERA": 10.523,
+          "WHIP": 2.7391,
+          "K7": 7.7609,
+          "KBB": 1.0,
+          "playerId": "ryan-vorpahl"
+        },
+        {
+          "player": "Westfall",
+          "W": 0,
+          "L": 0,
+          "SV": 0,
+          "BF": 12,
+          "R": 4,
+          "H": 5,
+          "ER": 4,
+          "BB": 4,
+          "K": 2,
+          "HBP": 1,
+          "HR": 0,
+          "IPDisplay": "1.1",
+          "IP": 1.3333,
+          "ERA": 21.053,
+          "WHIP": 6.7502,
+          "K7": 10.5003,
+          "KBB": 0.5,
+          "playerId": "riley-westfall"
+        }
+      ],
+      "teamBatting": {
+        "player": "TEAM",
+        "AB": 646,
+        "R": 166,
+        "H": 178,
+        "1B": 133,
+        "2B": 36,
+        "3B": 7,
+        "HR": 2,
+        "RBI": 138,
+        "BB": 107,
+        "HBP": 27,
+        "K": 146,
+        "SAC": 13,
+        "TB": 224,
+        "SB": 57,
+        "AVG": 0.276,
+        "OBP": 0.4,
+        "SLG": 0.347,
+        "PA": 793
+      },
+      "teamPitching": {
+        "player": "TEAM",
+        "W": 13,
+        "L": 13,
+        "SV": 2,
+        "BF": 835,
+        "R": 143,
+        "H": 179,
+        "ER": 104,
+        "BB": 88,
+        "K": 158,
+        "HBP": 36,
+        "HR": 1,
+        "IPDisplay": "170.2",
+        "IP": 170.6667,
+        "ERA": 4.265,
+        "WHIP": 1.5645,
+        "K7": 6.4805,
+        "KBB": 1.7955
+      },
+      "individualRecords": [],
+      "highlights": [],
+      "sourceQuality": {}
+    },
     "2023": {
       "year": 2023,
       "era": "bbcor",
@@ -36955,16 +38717,149 @@
       "playerId": "ryan-voves",
       "displayName": "Ryan Voves",
       "years": [
-        2019
+        2019,
+        2021
       ],
       "grades": {
         "2019": 10
       }
     },
-    "chase-pringle": {
-      "playerId": "chase-pringle",
-      "displayName": "Chase Pringle",
+    "colello": {
+      "playerId": "colello",
+      "displayName": "Colello",
       "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "garrick-cosmos": {
+      "playerId": "garrick-cosmos",
+      "displayName": "Garrick Cosmos",
+      "years": [
+        2021,
+        2022,
+        2023
+      ],
+      "grades": {}
+    },
+    "flaherty": {
+      "playerId": "flaherty",
+      "displayName": "Flaherty",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "drew-hento": {
+      "playerId": "drew-hento",
+      "displayName": "Drew Hento",
+      "years": [
+        2021,
+        2022
+      ],
+      "grades": {}
+    },
+    "hodges": {
+      "playerId": "hodges",
+      "displayName": "Hodges",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "justin-holum": {
+      "playerId": "justin-holum",
+      "displayName": "Justin Holum",
+      "years": [
+        2021,
+        2022
+      ],
+      "grades": {}
+    },
+    "jones": {
+      "playerId": "jones",
+      "displayName": "Jones",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "knowles": {
+      "playerId": "knowles",
+      "displayName": "Knowles",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "lundberg": {
+      "playerId": "lundberg",
+      "displayName": "Lundberg",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "jack-mclellan": {
+      "playerId": "jack-mclellan",
+      "displayName": "Jack McLellan",
+      "years": [
+        2021,
+        2022
+      ],
+      "grades": {}
+    },
+    "luke-miller": {
+      "playerId": "luke-miller",
+      "displayName": "Luke Miller",
+      "years": [
+        2021,
+        2022
+      ],
+      "grades": {}
+    },
+    "cutter-peterson": {
+      "playerId": "cutter-peterson",
+      "displayName": "Cutter Peterson",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "grades": {}
+    },
+    "reed": {
+      "playerId": "reed",
+      "displayName": "Reed",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "toglia": {
+      "playerId": "toglia",
+      "displayName": "Toglia",
+      "years": [
+        2021
+      ],
+      "grades": {}
+    },
+    "ryan-vorpahl": {
+      "playerId": "ryan-vorpahl",
+      "displayName": "Ryan Vorpahl",
+      "years": [
+        2021,
+        2022,
+        2023
+      ],
+      "grades": {}
+    },
+    "alex-vela": {
+      "playerId": "alex-vela",
+      "displayName": "Alex Vela",
+      "years": [
+        2022,
         2023
       ],
       "grades": {}
@@ -36973,22 +38868,136 @@
       "playerId": "brady-altman",
       "displayName": "Brady Altman",
       "years": [
+        2022,
         2023
       ],
       "grades": {}
     },
-    "josh-dunham": {
-      "playerId": "josh-dunham",
-      "displayName": "Josh Dunham",
+    "sam-barber": {
+      "playerId": "sam-barber",
+      "displayName": "Sam Barber",
       "years": [
-        2023,
-        2024
+        2022
+      ],
+      "grades": {}
+    },
+    "jd-dunham": {
+      "playerId": "jd-dunham",
+      "displayName": "JD Dunham",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "sam-haddon": {
+      "playerId": "sam-haddon",
+      "displayName": "Sam Haddon",
+      "years": [
+        2022,
+        2023
       ],
       "grades": {}
     },
     "ryland-heckman": {
       "playerId": "ryland-heckman",
       "displayName": "Ryland Heckman",
+      "years": [
+        2022,
+        2023,
+        2024
+      ],
+      "grades": {}
+    },
+    "trevor-hellwich": {
+      "playerId": "trevor-hellwich",
+      "displayName": "Trevor Hellwich",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "nolan-howard": {
+      "playerId": "nolan-howard",
+      "displayName": "Nolan Howard",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "lopes": {
+      "playerId": "lopes",
+      "displayName": "Lopes",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "kaden-marler": {
+      "playerId": "kaden-marler",
+      "displayName": "Kaden Marler",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "will-payne": {
+      "playerId": "will-payne",
+      "displayName": "Will Payne",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "chase-pringle": {
+      "playerId": "chase-pringle",
+      "displayName": "Chase Pringle",
+      "years": [
+        2022,
+        2023
+      ],
+      "grades": {}
+    },
+    "wriley-schreiner": {
+      "playerId": "wriley-schreiner",
+      "displayName": "Wriley Schreiner",
+      "years": [
+        2022
+      ],
+      "grades": {}
+    },
+    "cole-krilich": {
+      "playerId": "cole-krilich",
+      "displayName": "Cole Krilich",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "grades": {}
+    },
+    "brendan-masini": {
+      "playerId": "brendan-masini",
+      "displayName": "Brendan Masini",
+      "years": [
+        2022,
+        2023
+      ],
+      "grades": {}
+    },
+    "riley-westfall": {
+      "playerId": "riley-westfall",
+      "displayName": "Riley Westfall",
+      "years": [
+        2022,
+        2023,
+        2024
+      ],
+      "grades": {}
+    },
+    "josh-dunham": {
+      "playerId": "josh-dunham",
+      "displayName": "Josh Dunham",
       "years": [
         2023,
         2024
@@ -37007,16 +39016,6 @@
     "jayce-corley": {
       "playerId": "jayce-corley",
       "displayName": "Jayce Corley",
-      "years": [
-        2023,
-        2024,
-        2025
-      ],
-      "grades": {}
-    },
-    "cole-krilich": {
-      "playerId": "cole-krilich",
-      "displayName": "Cole Krilich",
       "years": [
         2023,
         2024,
@@ -37043,15 +39042,6 @@
       ],
       "grades": {}
     },
-    "cutter-peterson": {
-      "playerId": "cutter-peterson",
-      "displayName": "Cutter Peterson",
-      "years": [
-        2023,
-        2024
-      ],
-      "grades": {}
-    },
     "tristan-schaefer": {
       "playerId": "tristan-schaefer",
       "displayName": "Tristan Schaefer",
@@ -37068,14 +39058,6 @@
         2023,
         2024,
         2025
-      ],
-      "grades": {}
-    },
-    "alex-vela": {
-      "playerId": "alex-vela",
-      "displayName": "Alex Vela",
-      "years": [
-        2023
       ],
       "grades": {}
     },
@@ -37108,53 +39090,12 @@
       ],
       "grades": {}
     },
-    "sam-haddon": {
-      "playerId": "sam-haddon",
-      "displayName": "Sam Haddon",
-      "years": [
-        2023
-      ],
-      "grades": {}
-    },
-    "brendan-masini": {
-      "playerId": "brendan-masini",
-      "displayName": "Brendan Masini",
-      "years": [
-        2023
-      ],
-      "grades": {}
-    },
     "cole-flowers": {
       "playerId": "cole-flowers",
       "displayName": "Cole Flowers",
       "years": [
         2023,
         2024
-      ],
-      "grades": {}
-    },
-    "garrick-cosmos": {
-      "playerId": "garrick-cosmos",
-      "displayName": "Garrick Cosmos",
-      "years": [
-        2023
-      ],
-      "grades": {}
-    },
-    "riley-westfall": {
-      "playerId": "riley-westfall",
-      "displayName": "Riley Westfall",
-      "years": [
-        2023,
-        2024
-      ],
-      "grades": {}
-    },
-    "ryan-vorpahl": {
-      "playerId": "ryan-vorpahl",
-      "displayName": "Ryan Vorpahl",
-      "years": [
-        2023
       ],
       "grades": {}
     },
