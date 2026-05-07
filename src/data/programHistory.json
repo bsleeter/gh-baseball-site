@@ -34645,7 +34645,7 @@
       "year": 2026,
       "era": "bbcor",
       "league": "Puget Sound League \u00b7 Narrows Division",
-      "leagueChamp": false,
+      "leagueChamp": true,
       "districtChamp": false,
       "stateChamp": false,
       "statePlace": null,

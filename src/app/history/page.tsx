@@ -54,7 +54,7 @@ export default function HistoryPage() {
           { value: totalSeasons, label: "Seasons Archived" },
           { value: 2, label: "State Titles" },
           { value: 3, label: "District Titles" },
-          { value: 9, label: "League Titles" },
+          { value: 10, label: "League Titles" },
         ]}
       />
 

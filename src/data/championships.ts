@@ -32,6 +32,7 @@ export const leagueChampions: ChampionshipEntry[] = [
   { year: 2019 },
   { year: 2021 },
   { year: 2025 },
+  { year: 2026 },
 ];
 
 export const stateTopThree: StateFinish[] = [
