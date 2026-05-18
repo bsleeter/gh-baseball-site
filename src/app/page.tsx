@@ -46,7 +46,7 @@ export default function HomePage() {
           background:
             "linear-gradient(90deg, #1B2A4A 0%, #243B6E 35%, #243B6E 65%, #1B2A4A 100%)",
         }}
-        aria-label="2026 Puget Sound League and West Central District Champions"
+        aria-label="2026 Puget Sound League and District 3 Champions"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col items-center text-center gap-2">
           <span className="inline-flex items-center gap-2 font-heading font-bold text-[10px] sm:text-xs uppercase tracking-[0.28em] text-amber-300">
@@ -60,13 +60,9 @@ export default function HomePage() {
             </span>
             <span className="hidden sm:inline-block w-px h-5 bg-amber-300/40" />
             <span className="font-display text-base sm:text-xl tracking-[0.05em] text-white">
-              West Central District
+              District 3
             </span>
           </div>
-          <span className="font-heading text-[11px] sm:text-xs text-white/65 max-w-3xl">
-            District run: defeated Bellarmine, Decatur, and Kentlake.
-            Congratulations, Tides!
-          </span>
         </div>
       </section>
 
