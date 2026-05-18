@@ -70,8 +70,8 @@ export default function HomePage() {
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/team-photo.webp"
-            alt="Gig Harbor Tides Baseball Team"
+            src="/district_2026.jpeg"
+            alt="Gig Harbor Tides celebrating the 2026 District 3 Championship"
             fill
             className="object-cover opacity-25"
             priority
