@@ -73,10 +73,10 @@ export default function HomePage() {
             src="/district_2026.jpeg"
             alt="Gig Harbor Tides celebrating the 2026 District 3 Championship"
             fill
-            className="object-cover opacity-25"
+            className="object-cover opacity-45"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/35 via-navy/60 to-navy" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-20 sm:pt-12 sm:pb-28">
