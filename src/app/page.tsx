@@ -39,26 +39,32 @@ export default function HomePage() {
     <>
       <AnnouncementBanner />
 
-      {/* 2026 League Championship celebration */}
+      {/* 2026 Championship celebration */}
       <section
         className="relative overflow-hidden border-y border-amber-300/60"
         style={{
           background:
             "linear-gradient(90deg, #1B2A4A 0%, #243B6E 35%, #243B6E 65%, #1B2A4A 100%)",
         }}
-        aria-label="2026 Puget Sound League Champions"
+        aria-label="2026 Puget Sound League and West Central District Champions"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-1 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col items-center text-center gap-2">
           <span className="inline-flex items-center gap-2 font-heading font-bold text-[10px] sm:text-xs uppercase tracking-[0.28em] text-amber-300">
             <span aria-hidden="true">🏆</span>
-            Champions
+            2026 Champions
+            <span aria-hidden="true">🏆</span>
           </span>
-          <span className="hidden sm:inline-block w-px h-5 bg-amber-300/40" />
-          <span className="font-display text-base sm:text-xl tracking-[0.05em] text-white">
-            2026 Puget Sound League Champions
-          </span>
-          <span className="hidden sm:inline-block w-px h-5 bg-amber-300/40" />
-          <span className="font-heading text-xs sm:text-sm text-white/70">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-x-5 gap-y-1">
+            <span className="font-display text-base sm:text-xl tracking-[0.05em] text-white">
+              Puget Sound League
+            </span>
+            <span className="hidden sm:inline-block w-px h-5 bg-amber-300/40" />
+            <span className="font-display text-base sm:text-xl tracking-[0.05em] text-white">
+              West Central District
+            </span>
+          </div>
+          <span className="font-heading text-[11px] sm:text-xs text-white/65 max-w-3xl">
+            District run: defeated Bellarmine, Decatur, and Kentlake.
             Congratulations, Tides!
           </span>
         </div>

@@ -20,6 +20,7 @@ export const districtChampions: ChampionshipEntry[] = [
   { year: 1997 },
   { year: 2017 },
   { year: 2019 },
+  { year: 2026 },
 ];
 
 export const leagueChampions: ChampionshipEntry[] = [
