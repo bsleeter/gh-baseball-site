@@ -149,15 +149,15 @@ function SingleSeasonView({ era }: { era: EraFilter }) {
 
   const pitchingBoards = useMemo(
     () => [
-      { stat: "ERA" as const, label: "Lowest ERA", min: 25, format: formatERA, dir: "lowest" as const, qual: "min 25 IP" },
+      { stat: "ERA" as const, label: "Lowest ERA", min: 15, format: formatERA, dir: "lowest" as const, qual: "min 15 IP" },
       { stat: "W" as const, label: "Most Wins" },
       { stat: "K" as const, label: "Most Strikeouts" },
       { stat: "IP" as const, label: "Most Innings Pitched", format: formatIP },
       { stat: "SV" as const, label: "Most Saves" },
-      { stat: "OPPBA" as const, label: "Lowest Opp. BA", min: 25, format: formatRatio, dir: "lowest" as const, qual: "min 25 IP" },
-      { stat: "WHIP" as const, label: "Lowest WHIP", min: 25, format: (v: number) => v.toFixed(2), dir: "lowest" as const, qual: "min 25 IP" },
-      { stat: "K7" as const, label: "Best K/Game", min: 25, format: (v: number) => v.toFixed(1), qual: "min 25 IP · K × 7 / IP" },
-      { stat: "KBB" as const, label: "Best K/BB Ratio", min: 25, format: (v: number) => v.toFixed(2), qual: "min 25 IP" },
+      { stat: "OPPBA" as const, label: "Lowest Opp. BA", min: 15, format: formatRatio, dir: "lowest" as const, qual: "min 15 IP" },
+      { stat: "WHIP" as const, label: "Lowest WHIP", min: 15, format: (v: number) => v.toFixed(2), dir: "lowest" as const, qual: "min 15 IP" },
+      { stat: "K7" as const, label: "Best K/Game", min: 15, format: (v: number) => v.toFixed(1), qual: "min 15 IP · K × 7 / IP" },
+      { stat: "KBB" as const, label: "Best K/BB Ratio", min: 15, format: (v: number) => v.toFixed(2), qual: "min 15 IP" },
     ],
     [],
   );
