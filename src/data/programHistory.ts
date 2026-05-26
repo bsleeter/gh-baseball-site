@@ -280,6 +280,25 @@ interface LeaderOpts {
 }
 
 /**
+ * Slice the first `limit` rows but extend the cut to include every row tied
+ * with the entry at position `limit - 1`. So a Top-10 board that has ten
+ * 4-triple seasons followed by six 3-triple ties returns 16 rows — none of
+ * the tied #11 entries are arbitrarily dropped.
+ *
+ * Assumes `rows` is already sorted by value in the desired direction.
+ */
+function sliceWithTies<T extends { value: number }>(
+  rows: T[],
+  limit: number,
+): T[] {
+  if (rows.length <= limit) return rows;
+  const cutoff = rows[limit - 1].value;
+  let end = limit;
+  while (end < rows.length && rows[end].value === cutoff) end += 1;
+  return rows.slice(0, end);
+}
+
+/**
  * Top single-season values for a batting stat across the program.
  */
 export function singleSeasonBattingLeaders(
@@ -310,7 +329,7 @@ export function singleSeasonBattingLeaders(
   out.sort((a, b) =>
     direction === "best" ? b.value - a.value : a.value - b.value,
   );
-  return out.slice(0, limit);
+  return sliceWithTies(out, limit);
 }
 
 /**
@@ -343,7 +362,7 @@ export function singleSeasonPitchingLeaders(
   out.sort((a, b) =>
     direction === "best" ? b.value - a.value : a.value - b.value,
   );
-  return out.slice(0, limit);
+  return sliceWithTies(out, limit);
 }
 
 // ─── Career aggregates ────────────────────────────────────────────────
