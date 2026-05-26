@@ -8,9 +8,9 @@ import {
   formatRatio,
   formatERA,
   LATEST_YEAR,
-  type Season,
 } from "@/data/programHistory";
 import LiveSchedule from "./LiveSchedule";
+import LiveRoster from "./LiveRoster";
 import LiveSeasonHeader from "./LiveSeasonHeader";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader, { EditorialDivider } from "@/components/SectionHeader";
@@ -203,12 +203,12 @@ export default async function YearPage({
           )}
         </div>
 
-        {/* Roster + Schedule — side by side. Schedule is live (Supabase)
-            for the active season, archived for older years. */}
+        {/* Roster + Schedule — side by side. Both are live (Supabase) for
+            the active season and fall back to archived data baked into
+            programHistory.json for older years. */}
         {(() => {
-          const showRoster = season.roster.length > 0;
-          // Likely have a schedule if we have archived games OR this is a
-          // GameChanger-era season (Supabase may have live data).
+          const isLatest = season.year === LATEST_YEAR;
+          const showRoster = isLatest || season.roster.length > 0;
           const likelySchedule =
             season.schedule.length > 0 || season.year >= 2023;
           const sideBySide = showRoster && likelySchedule;
@@ -217,14 +217,11 @@ export default async function YearPage({
               className={`grid gap-6 ${sideBySide ? "lg:grid-cols-2" : "grid-cols-1"}`}
             >
               {showRoster && (
-                <section>
-                  <SectionHeader
-                    title="Roster"
-                    count={season.roster.length}
-                    countLabel="players"
-                  />
-                  <RosterGrid season={season} />
-                </section>
+                <LiveRoster
+                  year={season.year}
+                  archived={season.roster}
+                  isLatest={isLatest}
+                />
               )}
               {likelySchedule && (
                 <LiveSchedule
@@ -343,124 +340,6 @@ export default async function YearPage({
       </div>
     </main>
   );
-}
-
-// ─── Roster ──────────────────────────────────────────────────────────
-
-function RosterGrid({ season }: { season: Season }) {
-  // Group by grade; "Unknown" bucket holds anyone without a grade.
-  type Bucket = { key: string; label: string; players: typeof season.roster };
-  const buckets: Bucket[] = [
-    { key: "12", label: "Seniors", players: [] },
-    { key: "11", label: "Juniors", players: [] },
-    { key: "10", label: "Sophomores", players: [] },
-    { key: "9", label: "Freshmen", players: [] },
-  ];
-  const other: typeof season.roster = [];
-  const unknown: typeof season.roster = [];
-  for (const p of season.roster) {
-    if (p.grade === 12) buckets[0].players.push(p);
-    else if (p.grade === 11) buckets[1].players.push(p);
-    else if (p.grade === 10) buckets[2].players.push(p);
-    else if (p.grade === 9) buckets[3].players.push(p);
-    else if (typeof p.grade === "number") other.push(p);
-    else unknown.push(p);
-  }
-  // Within each grade, sort by jersey number then alphabetically by player.
-  const byNumThenName = (a: typeof season.roster[number], b: typeof season.roster[number]) => {
-    const an = a.num ?? 999, bn = b.num ?? 999;
-    if (an !== bn) return an - bn;
-    return a.player.localeCompare(b.player);
-  };
-  for (const b of buckets) b.players.sort(byNumThenName);
-  other.sort(byNumThenName);
-  unknown.sort(byNumThenName);
-
-  // Hide buckets that are empty
-  const visibleBuckets = buckets.filter((b) => b.players.length > 0);
-  if (other.length) {
-    visibleBuckets.push({ key: "other", label: "Other Grades", players: other });
-  }
-  if (unknown.length) {
-    visibleBuckets.push({ key: "unknown", label: "Roster", players: unknown });
-  }
-
-  // If the only bucket is "Roster" (everyone unknown grade), render flat
-  // without per-bucket headers — same look as before.
-  const flat = visibleBuckets.length === 1 && visibleBuckets[0].key === "unknown";
-  if (flat) {
-    return (
-      <div className="bg-white border border-navy/15 rounded-md p-5">
-        <PlayerColumns players={visibleBuckets[0].players} showGrade={false} />
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-white border border-navy/15 rounded-md p-5 space-y-5">
-      {visibleBuckets.map((b, i) => (
-        <div key={b.key} className={i > 0 ? "pt-4 border-t border-navy/10" : ""}>
-          <div className="flex items-baseline gap-3 mb-2">
-            <span className="font-heading font-bold text-[10px] uppercase tracking-[0.22em] text-navy/55">
-              {b.label}
-            </span>
-            <span className="font-heading text-[9px] uppercase tracking-[0.18em] text-navy/35 tabular-nums">
-              {b.players.length}
-            </span>
-          </div>
-          <PlayerColumns players={b.players} showGrade={false} />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function PlayerColumns({
-  players,
-  showGrade,
-}: {
-  players: { num: number | null; player: string; grade: number | null }[];
-  showGrade: boolean;
-}) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-1">
-      {players.map((r) => (
-        <div
-          key={r.player + (r.num ?? "")}
-          className="flex items-baseline gap-2 leading-snug"
-        >
-          {r.num != null && (
-            <span className="font-display text-sm text-navy/45 tabular-nums w-7 shrink-0">
-              {r.num}
-            </span>
-          )}
-          <span
-            className="text-navy truncate"
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "0.95rem",
-              fontWeight: 500,
-            }}
-          >
-            {r.player}
-          </span>
-          {showGrade && r.grade != null && (
-            <span className="text-[10px] font-heading uppercase tracking-[0.15em] text-navy/40 ml-auto">
-              {gradeLabel(r.grade)}
-            </span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function gradeLabel(g: number): string {
-  if (g === 12) return "Sr";
-  if (g === 11) return "Jr";
-  if (g === 10) return "So";
-  if (g === 9) return "Fr";
-  return `Gr${g}`;
 }
 
 // ─── Highlights ──────────────────────────────────────────────────────
